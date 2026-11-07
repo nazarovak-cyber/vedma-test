@@ -198,134 +198,57 @@ footer a{color:var(--gold)}
   .sticky{display:block}
   .hero .btn{width:100%}
 }
+.langbar{position:fixed;top:14px;right:14px;z-index:30;display:flex;gap:2px;padding:4px;border-radius:999px;
+  background:rgba(23,15,20,.78);border:1px solid var(--line);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.langbar button{border:0;background:transparent;color:var(--muted);font:600 12px/1 var(--sans);letter-spacing:.08em;padding:8px 10px;border-radius:999px;cursor:pointer;transition:all .2s}
+.langbar button:hover{color:var(--paper)}
+.langbar button.on{background:var(--gold);color:#2a1720}
+.top{padding-right:190px}
+@media (max-width:640px){.langbar{top:10px;right:10px}.langbar button{padding:7px 8px;font-size:11px}.top{padding-right:0;padding-top:58px}}
+#quiz .qbar{padding-top:64px}
+.res-head{padding-top:64px}
 </style>
 </head>
 <body>
 <div class="stars" id="stars"></div>
 
-<!-- ============ 1. ЛЕНДИНГ ============ -->
-<div id="landing" class="screen active">
-  <div class="wrap top">
-    <a class="logo" href="https://victoria-bain-book.nazarova-k.chatgpt.site/">VICTORIA BAIN<small>истории за гранью привычного</small></a>
-    <a class="note" href="#start" style="color:var(--gold);text-decoration:none">Тест ✦</a>
-  </div>
-
-  <header class="hero wrap" id="start">
-    <div class="orb" aria-hidden="true">
-      <svg viewBox="0 0 200 200" fill="none" stroke="#d1b478" stroke-width=".7">
-        <circle cx="100" cy="100" r="96" opacity=".5"/><circle cx="100" cy="100" r="80" stroke-dasharray="2 5"/>
-        <circle cx="100" cy="100" r="60" opacity=".6"/>
-        <path d="M100 4 L100 196 M4 100 L196 100 M32 32 L168 168 M168 32 L32 168" opacity=".25"/>
-        <polygon points="100,22 168,140 32,140" opacity=".5"/><polygon points="100,178 32,60 168,60" opacity=".5"/>
-        <g fill="#d1b478" stroke="none"><circle cx="100" cy="4" r="2.5"/><circle cx="196" cy="100" r="2.5"/><circle cx="100" cy="196" r="2.5"/><circle cx="4" cy="100" r="2.5"/></g>
-      </svg>
-      <div class="eye">☾</div>
-    </div>
-    <span class="eyebrow">Бесплатный тест · 10 вопросов · 2 минуты</span>
-    <h1>Какая <em>скрытая сила</em> живёт в вас?</h1>
-    <p class="lead">Сны, которые сбываются. Предчувствия. Ощущение, что вы чувствуете людей насквозь. Это не случайность — это ваш дар. Узнайте, какой он, и получите личный расклад: ваш архетип, его тень и практики, чтобы раскрыть силу.</p>
-    <button class="btn pulse" data-start>Пройти тест ✦</button>
-    <div class="meta"><span>без регистрации</span><span>результат сразу</span><span>по мотивам книги «Я ведьма»</span></div>
-  </header>
-
-  <section>
-    <div class="wrap">
-      <span class="eyebrow">Узнаёте себя?</span>
-      <h2 style="margin-top:14px">Если с вами случалось хотя бы одно из этого — <em>тест для вас</em></h2>
-      <div class="signs">
-        <div class="sign"><span class="ico">☾</span><b>Сны сбываются</b>Снится то, что потом происходит наяву. Или сны настолько яркие, что утром трудно понять, где была реальность.</div>
-        <div class="sign"><span class="ico">◉</span><b>Вы «просто знаете»</b>Кто сейчас позвонит, что человек врёт, чем закончится дело. Объяснить не можете — но оказываетесь правы.</div>
-        <div class="sign"><span class="ico">♡</span><b>Чужая боль — как своя</b>Рядом с одними людьми вы оживаете, после других — опустошены, будто из вас забрали силы.</div>
-        <div class="sign"><span class="ico">✧</span><b>Слова сбываются</b>Скажете в сердцах — и случается. Вы давно заметили, что с желаниями надо быть осторожнее.</div>
-        <div class="sign"><span class="ico">∞</span><b>«Я здесь уже была»</b>Дежавю, тяга к другим эпохам и местам, воспоминания, которых не может быть.</div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="narrow warn">
-      <span class="eyebrow">Почему это важно</span>
-      <h2 style="margin-top:14px">У каждого есть скрытые способности. Но сила, которую <em>не раскрывают</em>, начинает разрушать</h2>
-      <p class="lead" style="margin-top:18px">Приходит время, когда дар просится наружу. Если его не замечать, энергия не исчезает — она поворачивается против вас:</p>
-      <ul>
-        <li>постоянная усталость без причины и ощущение, что живёте не свою жизнь</li>
-        <li>повторяющиеся сценарии в отношениях и с деньгами — «как будто по кругу»</li>
-        <li>тревога, бессонница, тяжёлые сны</li>
-        <li>вы чувствуете больше других, но не знаете, что с этим делать — и стыдитесь этого</li>
-      </ul>
-      <p style="margin-top:22px">Тест покажет, какая именно сила в вас ведущая, насколько она раскрыта и с чего начать.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <span class="eyebrow">5 архетипов силы</span>
-      <h2 style="margin-top:14px">Кто вы из пяти?</h2>
-      <div class="arch-grid" id="archPreview"></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <span class="eyebrow">Ваш личный расклад</span>
-      <h2 style="margin-top:14px">Что вы получите в конце</h2>
-      <div class="get">
-        <div><b>Ваш архетип</b><p class="muted">Ведущая сила и вторая — та, что её усиливает.</p></div>
-        <div><b>Уровень раскрытия</b><p class="muted">Спит ваш дар, просыпается или уже работает.</p></div>
-        <div><b>Тень архетипа</b><p class="muted">Что происходит, когда силу держат взаперти.</p></div>
-        <div><b>Практики на 7 дней</b><p class="muted">Три простых шага именно для вашего типа.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="cta-final narrow">
-    <p class="quote">«Я пишу о том, что реальность глубже, чем кажется».<br><span class="note" style="font-style:normal;font-family:var(--sans)">— Виктория Байн, автор книги «Я ведьма»</span></p>
-    <button class="btn pulse" data-start>Узнать свою силу ✦</button>
-    <p class="note" style="margin-top:16px">Литературный тест для самонаблюдения по мотивам романа «Я ведьма». Не является психологической диагностикой.</p>
-  </div>
+<div class="langbar" id="langbar" role="group" aria-label="Language">
+  <button data-lang="ru">RU</button><button data-lang="en">EN</button><button data-lang="pt">PT</button><button data-lang="es">ES</button>
 </div>
 
-<!-- ============ 2. ТЕСТ ============ -->
+<div id="landing" class="screen active"></div>
+
 <div id="quiz" class="screen">
   <div class="narrow">
-    <div class="qbar"><button class="qback" id="qBack">← Назад</button><span id="qCount">1 / 10</span></div>
+    <div class="qbar"><button class="qback" id="qBack"></button><span id="qCount">1 / 10</span></div>
     <div class="progress"><i id="qProg"></i></div>
     <div class="qcard" id="qCard"></div>
   </div>
 </div>
 
-<!-- ============ 3. ЗАГРУЗКА ============ -->
 <div id="loading" class="screen">
   <div>
     <div class="cards-fan"><span></span><span></span><span></span><span></span></div>
-    <p id="loadText">Раскладываем ваши ответы…</p>
+    <p id="loadText"></p>
   </div>
 </div>
 
-<!-- ============ 4. РЕЗУЛЬТАТ ============ -->
 <div id="result" class="screen">
   <div class="narrow" id="resBody"></div>
-  <footer class="narrow">
-    <p>Литературный тест для самонаблюдения по мотивам романа Виктории Байн «Я ведьма». Не является психологической или медицинской диагностикой.</p>
-    <p style="margin-top:10px"><a href="https://victoria-bain-book.nazarova-k.chatgpt.site/">Сайт автора</a> · <a href="https://victoria-bain-book.nazarova-k.chatgpt.site/legal/">Оферта и конфиденциальность</a></p>
-    <p style="margin-top:10px">© 2026 Виктория Байн</p>
-  </footer>
+  <footer class="narrow" id="footer"></footer>
 </div>
 
-<div class="sticky" id="sticky"><a class="btn" id="stickyBtn" href="#">Книга «Я ведьма» за 290 ₽</a></div>
+<div class="sticky" id="sticky"><a class="btn" id="stickyBtn" href="#"></a></div>
 
 <script>
 /* ================= НАСТРОЙКИ ================= */
 const SITE = "https://victoria-bain-book.nazarova-k.chatgpt.site";
 const PRICE = 290, OLD_PRICE = 500;
-// Ссылка на оплату. archetype подставляется автоматически — видно, какой тип чаще покупает.
-const checkoutUrl = a => `${SITE}/checkout/?book=witch&format=pdf&source=quiz290&archetype=${a}`;
+const checkoutUrl = (a,l) => `${SITE}/checkout/?book=witch&format=pdf&source=quiz290&archetype=${a}&lang=${l}`;
 const COVER = `${SITE}/assets/edition-cover.webp`;
-const YM_ID = null; // номер счётчика Яндекс.Метрики, если нужен: например 12345678
-
+const YM_ID = null; // номер счётчика Яндекс.Метрики, если нужен
 function track(goal){ try{ if(YM_ID && window.ym) ym(YM_ID,'reachGoal',goal); if(window.gtag) gtag('event',goal); }catch(e){} }
 
-/* ================= АРХЕТИПЫ ================= */
 const ICONS = {
  seer:`<svg viewBox="0 0 100 100" fill="none" stroke="#d1b478" stroke-width="2.2"><path d="M8 50 Q50 12 92 50 Q50 88 8 50Z"/><circle cx="50" cy="50" r="15"/><circle cx="50" cy="50" r="5" fill="#d1b478"/><path d="M50 8v10M50 82v10M20 22l6 7M80 22l-6 7M20 78l6-7M80 78l-6-7" opacity=".6"/></svg>`,
  dreamer:`<svg viewBox="0 0 100 100" fill="none" stroke="#d1b478" stroke-width="2.2"><path d="M62 14 A38 38 0 1 0 86 64 A30 30 0 1 1 62 14Z"/><path d="M70 30l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#d1b478"/><circle cx="82" cy="20" r="2" fill="#d1b478"/><circle cx="30" cy="84" r="1.6" fill="#d1b478"/></svg>`,
@@ -334,6 +257,8 @@ const ICONS = {
  keeper:`<svg viewBox="0 0 100 100" fill="none" stroke="#d1b478" stroke-width="2.2"><circle cx="50" cy="50" r="38"/><path d="M50 12 C30 30 30 70 50 88 C70 70 70 30 50 12Z"/><path d="M12 50h76" opacity=".6"/><path d="M50 50 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0" opacity=".4" stroke-dasharray="3 4"/><circle cx="50" cy="50" r="4" fill="#d1b478"/></svg>`
 };
 
+
+/* ================= РУССКИЕ ТЕКСТЫ: архетипы, вопросы, уровни ================= */
 const A = {
  seer:{ gen:"Видящей", name:"Видящая", roman:"I", sub:"дар ясновидения", short:"интуиция и предчувствия",
   essence:"Ваша сила — знание без объяснений. Вы видите суть людей и событий раньше, чем она становится очевидной. Информация приходит к вам вспышками: образом, ощущением в теле, внезапной уверенностью. Вы часто правы, но редко можете доказать, откуда знаете.",
@@ -447,28 +372,455 @@ const LEVELS = [
  {min:6,max:6,name:"Раскрытая сила",pct:[88,94],text:"Ваша сила работает, и вы ей доверяете. Теперь важно не растерять её и углубить: понять её корни и научиться беречь себя. Практики ниже помогут удерживать поток."}
 ];
 
-/* ================= ЛОГИКА ================= */
-let step=0; const answers=[];
-const $=s=>document.querySelector(s);
-function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$('#'+id).classList.add('active');window.scrollTo({top:0,behavior:'instant'});}
 
-// звёзды
+/* ================= ТЕКСТЫ НА 4 ЯЗЫКАХ ================= */
+const UI = {
+ru:{
+ metaTitle:"Какая скрытая сила живёт в вас? — тест по книге «Я ведьма»",
+ metaDesc:"Бесплатный тест из 10 вопросов: узнайте свой архетип силы и получите личный расклад с практиками.",
+ navTest:"Тест ✦", logoSub:"истории за гранью привычного",
+ heroEyebrow:"Бесплатный тест · 10 вопросов · 2 минуты",
+ heroH1:"Какая <em>скрытая сила</em> живёт в вас?",
+ heroLead:"Сны, которые сбываются. Предчувствия. Ощущение, что вы чувствуете людей насквозь. Это не случайность — это ваш дар. Узнайте, какой он, и получите личный расклад: ваш архетип, его тень и практики, чтобы раскрыть силу.",
+ heroBtn:"Пройти тест ✦", heroMeta:["без регистрации","результат сразу","по мотивам книги «Я ведьма»"],
+ signsEyebrow:"Узнаёте себя?", signsH2:"Если с вами случалось хотя бы одно из этого — <em>тест для вас</em>",
+ signs:[["☾","Сны сбываются","Снится то, что потом происходит наяву. Или сны настолько яркие, что утром трудно понять, где была реальность."],
+  ["◉","Вы «просто знаете»","Кто сейчас позвонит, что человек врёт, чем закончится дело. Объяснить не можете — но оказываетесь правы."],
+  ["♡","Чужая боль — как своя","Рядом с одними людьми вы оживаете, после других — опустошены, будто из вас забрали силы."],
+  ["✧","Слова сбываются","Скажете в сердцах — и случается. Вы давно заметили, что с желаниями надо быть осторожнее."],
+  ["∞","«Я здесь уже была»","Дежавю, тяга к другим эпохам и местам, воспоминания, которых не может быть."]],
+ warnEyebrow:"Почему это важно",
+ warnH2:"У каждого есть скрытые способности. Но сила, которую <em>не раскрывают</em>, начинает разрушать",
+ warnLead:"Приходит время, когда дар просится наружу. Если его не замечать, энергия не исчезает — она поворачивается против вас:",
+ warnList:["постоянная усталость без причины и ощущение, что живёте не свою жизнь","повторяющиеся сценарии в отношениях и с деньгами — «как будто по кругу»","тревога, бессонница, тяжёлые сны","вы чувствуете больше других, но не знаете, что с этим делать — и стыдитесь этого"],
+ warnOutro:"Тест покажет, какая именно сила в вас ведущая, насколько она раскрыта и с чего начать.",
+ archEyebrow:"5 архетипов силы", archH2:"Кто вы из пяти?",
+ getEyebrow:"Ваш личный расклад", getH2:"Что вы получите в конце",
+ get:[["Ваш архетип","Ведущая сила и вторая — та, что её усиливает."],["Уровень раскрытия","Спит ваш дар, просыпается или уже работает."],["Тень архетипа","Что происходит, когда силу держат взаперти."],["Практики на 7 дней","Три простых шага именно для вашего типа."]],
+ quote:"«Я пишу о том, что реальность глубже, чем кажется».", quoteBy:"— Виктория Байн, автор книги «Я ведьма»",
+ ctaBtn:"Узнать свою силу ✦",
+ disclaimer:"Литературный тест для самонаблюдения по мотивам романа «Я ведьма». Не является психологической диагностикой.",
+ qBack:"← Назад", qNum:n=>`Вопрос ${n}`, qHint:"Выберите то, что ближе. Первый отклик — самый точный.",
+ load:["Раскладываем ваши ответы…","Ищем вашу ведущую силу…","Смотрим, что скрыто в тени…","Подбираем практики…"],
+ resEyebrow:"Ваш расклад готов", resH1:n=>`Ваша сила — <em>${n}</em>`,
+ essenceH:"Суть вашего дара", mapH:"Ваша карта сил",
+ second:(n,s)=>`Вторая по силе — <b style="color:var(--paper)">${n}</b> (${s}). Она усиливает ваш главный дар и подсказывает, куда его направить.`,
+ showsH:"Как ваш дар проявляется", levelH:"Уровень раскрытия",
+ shadowH:"Тень архетипа: когда сила закрыта", shadowLead:"Нераскрытый дар не исчезает. Он ищет выход — и часто разрушает. Отметьте, что из этого вам знакомо:",
+ practicesH:g=>`Практики на 7 дней для ${g}`,
+ bridge:"Но практики — только начало. Чтобы дар раскрылся, нужно понять, откуда он и что он от вас хочет.",
+ bookH:n=>`Почему ${n} узнает себя в книге «Я ведьма»`,
+ bookP2:"Это роман о судьбе, любви, мистике и силе, основанный на реальных событиях. Его выбирают те, кто чувствует, что в них есть больше, чем они привыкли показывать. Многие читательницы пишут, что книга «открыла» им то, о чём они догадывались годами.",
+ offerEyebrow:"Только для прошедших тест", bookTitle:"«Я ведьма. Жизнь до и после»",
+ offerList:n=>["Электронная книга: ePub + PDF","Придёт сразу после оплаты — читать через 2 минуты","История, основанная на реальных событиях",`Ключ к вашему архетипу: ${n}`],
+ langNote:"",
+ offerBtn:p=>`Забрать книгу за ${p} ₽`, freeLink:"Сначала прочитать 3 главы бесплатно →",
+ social:"Бестселлер 2025 · Более 1400 покупок за последние 30 дней",
+ shareBtn:"Поделиться результатом", againBtn:"Пройти ещё раз", copied:"Ссылка скопирована ✓",
+ shareTitle:"Тест: какая сила в тебе скрыта", shareText:(n,s)=>`Мой архетип силы — ${n} (${s}). А какая сила скрыта в тебе?`,
+ footerDisc:"Литературный тест для самонаблюдения по мотивам романа Виктории Байн «Я ведьма». Не является психологической или медицинской диагностикой.",
+ footerSite:"Сайт автора", footerLegal:"Оферта и конфиденциальность", footerCopy:"© 2026 Виктория Байн",
+ sticky:p=>`Книга «Я ведьма» за ${p} ₽`, coverAlt:"Обложка книги «Я ведьма. Жизнь до и после»", coverFallback:["Я ведьма","Виктория Байн"]
+},
+en:{
+ metaTitle:"What hidden power lives in you? — a quiz based on the novel “I Am a Witch”",
+ metaDesc:"A free 10-question quiz: discover your power archetype and get a personal reading with practices.",
+ navTest:"Quiz ✦", logoSub:"stories beyond the ordinary",
+ heroEyebrow:"Free quiz · 10 questions · 2 minutes",
+ heroH1:"What <em>hidden power</em> lives in you?",
+ heroLead:"Dreams that come true. Premonitions. The feeling that you can see right through people. It isn’t a coincidence — it’s your gift. Find out what it is and get a personal reading: your archetype, its shadow, and practices to awaken your power.",
+ heroBtn:"Take the quiz ✦", heroMeta:["no sign-up","instant result","inspired by the novel “I Am a Witch”"],
+ signsEyebrow:"Sound familiar?", signsH2:"If even one of these has happened to you — <em>this quiz is for you</em>",
+ signs:[["☾","Your dreams come true","You dream of things that later happen. Or your dreams are so vivid that in the morning it’s hard to tell what was real."],
+  ["◉","You “just know”","Who’s about to call, when someone is lying, how things will turn out. You can’t explain it — but you’re right."],
+  ["♡","Others’ pain feels like yours","Some people make you come alive; others leave you drained, as if your strength had been taken."],
+  ["✧","Your words come true","Say something in the heat of the moment — and it happens. You learned long ago to be careful what you wish for."],
+  ["∞","“I’ve been here before”","Déjà vu, a pull toward other eras and places, memories that shouldn’t be possible."]],
+ warnEyebrow:"Why it matters",
+ warnH2:"Everyone has hidden abilities. But a power that stays <em>locked away</em> begins to destroy",
+ warnLead:"There comes a time when your gift asks to be let out. If you ignore it, the energy doesn’t disappear — it turns against you:",
+ warnList:["constant tiredness for no reason and the feeling that you’re living someone else’s life","the same patterns in relationships and with money — “going around in circles”","anxiety, insomnia, heavy dreams","you feel more than others but don’t know what to do with it — and feel ashamed of it"],
+ warnOutro:"The quiz will show which power leads in you, how open it is, and where to begin.",
+ archEyebrow:"5 power archetypes", archH2:"Which of the five are you?",
+ getEyebrow:"Your personal reading", getH2:"What you’ll get at the end",
+ get:[["Your archetype","Your leading power and the second one that strengthens it."],["Awakening level","Whether your gift is asleep, awakening, or already at work."],["The archetype’s shadow","What happens when your power is kept locked away."],["7-day practices","Three simple steps made for your type."]],
+ quote:"“I write about how reality is deeper than it seems.”", quoteBy:"— Victoria Bain, author of “I Am a Witch”",
+ ctaBtn:"Discover your power ✦",
+ disclaimer:"A literary self-reflection quiz inspired by the novel “I Am a Witch”. It is not a psychological assessment.",
+ qBack:"← Back", qNum:n=>`Question ${n}`, qHint:"Choose what feels closest. Your first response is the truest.",
+ load:["Laying out your answers…","Finding your leading power…","Looking at what hides in the shadow…","Choosing your practices…"],
+ resEyebrow:"Your reading is ready", resH1:n=>`Your power: <em>${n}</em>`,
+ essenceH:"The essence of your gift", mapH:"Your power map",
+ second:(n,s)=>`Your second power is <b style="color:var(--paper)">${n}</b> (${s}). It strengthens your main gift and shows where to direct it.`,
+ showsH:"How your gift shows up", levelH:"Awakening level",
+ shadowH:"The archetype’s shadow: when your power is closed", shadowLead:"An unawakened gift doesn’t disappear. It looks for a way out — and often destroys. Notice which of these feel familiar:",
+ practicesH:g=>`7-day practices for ${g}`,
+ bridge:"But practices are only the beginning. For your gift to open, you need to understand where it comes from and what it wants from you.",
+ bookH:n=>`Why the ${n} will recognize herself in “I Am a Witch”`,
+ bookP2:"It’s a novel about destiny, love, mysticism and power, based on real events. It’s chosen by those who feel there is more in them than they’re used to showing. Many readers say the book “opened up” something they had suspected for years.",
+ offerEyebrow:"Only for those who took the quiz", bookTitle:"“I Am a Witch. Life Before and After”",
+ offerList:n=>["E-book: ePub + PDF","Delivered right after payment — start reading in 2 minutes","A story based on real events",`A key to your archetype: ${n}`],
+ langNote:"The book is in Russian.",
+ offerBtn:p=>`Get the book for ${p} ₽`, freeLink:"Read 3 chapters for free first →",
+ social:"2025 bestseller · More than 1,400 purchases in the last 30 days",
+ shareBtn:"Share my result", againBtn:"Take it again", copied:"Link copied ✓",
+ shareTitle:"Quiz: what power is hidden in you", shareText:(n,s)=>`My power archetype is ${n} (${s}). What power is hidden in you?`,
+ footerDisc:"A literary self-reflection quiz inspired by Victoria Bain’s novel “I Am a Witch”. It is not a psychological or medical assessment.",
+ footerSite:"Author’s website", footerLegal:"Terms and privacy", footerCopy:"© 2026 Victoria Bain",
+ sticky:p=>`“I Am a Witch” for ${p} ₽`, coverAlt:"Cover of “I Am a Witch. Life Before and After”", coverFallback:["I Am a Witch","Victoria Bain"]
+},
+pt:{
+ metaTitle:"Que poder oculto vive em você? — teste inspirado no romance “Eu sou uma bruxa”",
+ metaDesc:"Teste gratuito de 10 perguntas: descubra o seu arquétipo de poder e receba uma leitura pessoal com práticas.",
+ navTest:"Teste ✦", logoSub:"histórias além do comum",
+ heroEyebrow:"Teste gratuito · 10 perguntas · 2 minutos",
+ heroH1:"Que <em>poder oculto</em> vive em você?",
+ heroLead:"Sonhos que se realizam. Pressentimentos. A sensação de enxergar as pessoas por dentro. Não é coincidência — é o seu dom. Descubra qual é e receba uma leitura pessoal: o seu arquétipo, a sua sombra e práticas para despertar o seu poder.",
+ heroBtn:"Fazer o teste ✦", heroMeta:["sem cadastro","resultado imediato","inspirado no romance “Eu sou uma bruxa”"],
+ signsEyebrow:"Você se reconhece?", signsH2:"Se pelo menos uma destas coisas já aconteceu com você — <em>este teste é para você</em>",
+ signs:[["☾","Seus sonhos se realizam","Você sonha com coisas que depois acontecem. Ou os sonhos são tão vívidos que, de manhã, é difícil saber o que foi real."],
+  ["◉","Você “simplesmente sabe”","Quem vai ligar, quando alguém está mentindo, como tudo vai terminar. Não consegue explicar — mas acerta."],
+  ["♡","A dor dos outros parece sua","Perto de algumas pessoas você ganha vida; depois de outras, fica esgotada, como se tivessem levado a sua força."],
+  ["✧","Suas palavras se cumprem","Você fala algo num momento de raiva — e acontece. Há muito aprendeu a ter cuidado com o que deseja."],
+  ["∞","“Eu já estive aqui”","Déjà vu, atração por outras épocas e lugares, lembranças que não deveriam existir."]],
+ warnEyebrow:"Por que isso importa",
+ warnH2:"Todo mundo tem habilidades ocultas. Mas o poder que <em>não é despertado</em> começa a destruir",
+ warnLead:"Chega um momento em que o dom pede para sair. Se você o ignora, a energia não desaparece — ela se volta contra você:",
+ warnList:["cansaço constante sem motivo e a sensação de viver a vida de outra pessoa","os mesmos padrões nos relacionamentos e com dinheiro — “andando em círculos”","ansiedade, insônia, sonhos pesados","você sente mais do que os outros, mas não sabe o que fazer com isso — e tem vergonha"],
+ warnOutro:"O teste mostra qual poder é o principal em você, o quanto ele está desperto e por onde começar.",
+ archEyebrow:"5 arquétipos de poder", archH2:"Qual dos cinco é você?",
+ getEyebrow:"A sua leitura pessoal", getH2:"O que você recebe no final",
+ get:[["O seu arquétipo","O poder principal e o segundo, que o fortalece."],["Nível de despertar","Se o seu dom está adormecido, despertando ou já em ação."],["A sombra do arquétipo","O que acontece quando o poder fica trancado."],["Práticas para 7 dias","Três passos simples feitos para o seu tipo."]],
+ quote:"“Escrevo sobre como a realidade é mais profunda do que parece.”", quoteBy:"— Victoria Bain, autora de “Eu sou uma bruxa”",
+ ctaBtn:"Descobrir o meu poder ✦",
+ disclaimer:"Um teste literário de autoconhecimento inspirado no romance “Eu sou uma bruxa”. Não é uma avaliação psicológica.",
+ qBack:"← Voltar", qNum:n=>`Pergunta ${n}`, qHint:"Escolha o que estiver mais próximo. A primeira resposta é a mais verdadeira.",
+ load:["Abrindo as suas respostas…","Procurando o seu poder principal…","Olhando o que se esconde na sombra…","Escolhendo as suas práticas…"],
+ resEyebrow:"A sua leitura está pronta", resH1:n=>`O seu poder: <em>${n}</em>`,
+ essenceH:"A essência do seu dom", mapH:"O seu mapa de poderes",
+ second:(n,s)=>`O seu segundo poder é <b style="color:var(--paper)">${n}</b> (${s}). Ele fortalece o seu dom principal e mostra para onde direcioná-lo.`,
+ showsH:"Como o seu dom se manifesta", levelH:"Nível de despertar",
+ shadowH:"A sombra do arquétipo: quando o poder está fechado", shadowLead:"Um dom não despertado não desaparece. Ele procura uma saída — e muitas vezes destrói. Veja o que parece familiar:",
+ practicesH:g=>`Práticas de 7 dias para ${g}`,
+ bridge:"Mas as práticas são só o começo. Para o seu dom se abrir, é preciso entender de onde ele vem e o que ele quer de você.",
+ bookH:n=>`Por que a ${n} vai se reconhecer em “Eu sou uma bruxa”`,
+ bookP2:"É um romance sobre destino, amor, mistério e poder, baseado em fatos reais. É escolhido por quem sente que existe mais dentro de si do que costuma mostrar. Muitas leitoras contam que o livro “abriu” algo de que suspeitavam havia anos.",
+ offerEyebrow:"Só para quem fez o teste", bookTitle:"“Eu sou uma bruxa. A vida antes e depois”",
+ offerList:n=>["E-book: ePub + PDF","Enviado logo após o pagamento — comece a ler em 2 minutos","Uma história baseada em fatos reais",`Uma chave para o seu arquétipo: ${n}`],
+ langNote:"O livro está em russo.",
+ offerBtn:p=>`Quero o livro por ${p} ₽`, freeLink:"Ler 3 capítulos grátis primeiro →",
+ social:"Best-seller de 2025 · Mais de 1.400 compras nos últimos 30 dias",
+ shareBtn:"Compartilhar resultado", againBtn:"Fazer de novo", copied:"Link copiado ✓",
+ shareTitle:"Teste: que poder está oculto em você", shareText:(n,s)=>`O meu arquétipo de poder é ${n} (${s}). Que poder está oculto em você?`,
+ footerDisc:"Um teste literário de autoconhecimento inspirado no romance de Victoria Bain “Eu sou uma bruxa”. Não é uma avaliação psicológica nem médica.",
+ footerSite:"Site da autora", footerLegal:"Termos e privacidade", footerCopy:"© 2026 Victoria Bain",
+ sticky:p=>`“Eu sou uma bruxa” por ${p} ₽`, coverAlt:"Capa do livro “Eu sou uma bruxa. A vida antes e depois”", coverFallback:["Eu sou uma bruxa","Victoria Bain"]
+},
+es:{
+ metaTitle:"¿Qué poder oculto vive en ti? — test inspirado en la novela «Soy una bruja»",
+ metaDesc:"Test gratuito de 10 preguntas: descubre tu arquetipo de poder y recibe una lectura personal con prácticas.",
+ navTest:"Test ✦", logoSub:"historias más allá de lo común",
+ heroEyebrow:"Test gratuito · 10 preguntas · 2 minutos",
+ heroH1:"¿Qué <em>poder oculto</em> vive en ti?",
+ heroLead:"Sueños que se cumplen. Presentimientos. La sensación de ver a las personas por dentro. No es casualidad: es tu don. Descubre cuál es y recibe una lectura personal: tu arquetipo, su sombra y prácticas para despertar tu poder.",
+ heroBtn:"Hacer el test ✦", heroMeta:["sin registro","resultado inmediato","inspirado en la novela «Soy una bruja»"],
+ signsEyebrow:"¿Te reconoces?", signsH2:"Si te ha pasado al menos una de estas cosas, <em>este test es para ti</em>",
+ signs:[["☾","Tus sueños se cumplen","Sueñas con cosas que luego suceden. O tus sueños son tan vívidos que por la mañana cuesta saber qué fue real."],
+  ["◉","Tú «simplemente sabes»","Quién va a llamar, cuándo alguien miente, cómo terminará algo. No puedes explicarlo, pero aciertas."],
+  ["♡","El dolor ajeno se siente propio","Junto a algunas personas cobras vida; después de otras quedas vacía, como si te hubieran quitado la fuerza."],
+  ["✧","Tus palabras se cumplen","Dices algo en un arrebato y sucede. Hace tiempo aprendiste a tener cuidado con lo que deseas."],
+  ["∞","«Ya estuve aquí»","Déjà vu, atracción por otras épocas y lugares, recuerdos que no deberían existir."]],
+ warnEyebrow:"Por qué importa",
+ warnH2:"Todos tenemos capacidades ocultas. Pero el poder que <em>no se despierta</em> empieza a destruir",
+ warnLead:"Llega un momento en que el don pide salir. Si lo ignoras, la energía no desaparece: se vuelve contra ti:",
+ warnList:["cansancio constante sin motivo y la sensación de vivir una vida que no es tuya","los mismos patrones en las relaciones y con el dinero, «como dando vueltas en círculo»","ansiedad, insomnio, sueños pesados","sientes más que los demás, pero no sabes qué hacer con ello y te avergüenzas"],
+ warnOutro:"El test te mostrará qué poder predomina en ti, cuánto está despierto y por dónde empezar.",
+ archEyebrow:"5 arquetipos de poder", archH2:"¿Cuál de los cinco eres?",
+ getEyebrow:"Tu lectura personal", getH2:"Qué recibirás al final",
+ get:[["Tu arquetipo","Tu poder principal y el segundo, que lo refuerza."],["Nivel de despertar","Si tu don está dormido, despertando o ya en acción."],["La sombra del arquetipo","Qué pasa cuando el poder se mantiene encerrado."],["Prácticas de 7 días","Tres pasos sencillos pensados para tu tipo."]],
+ quote:"«Escribo sobre cómo la realidad es más profunda de lo que parece».", quoteBy:"— Victoria Bain, autora de «Soy una bruja»",
+ ctaBtn:"Descubrir mi poder ✦",
+ disclaimer:"Un test literario de autoconocimiento inspirado en la novela «Soy una bruja». No es una evaluación psicológica.",
+ qBack:"← Atrás", qNum:n=>`Pregunta ${n}`, qHint:"Elige lo que más se acerque. La primera respuesta es la más certera.",
+ load:["Desplegando tus respuestas…","Buscando tu poder principal…","Mirando lo que se oculta en la sombra…","Eligiendo tus prácticas…"],
+ resEyebrow:"Tu lectura está lista", resH1:n=>`Tu poder: <em>${n}</em>`,
+ essenceH:"La esencia de tu don", mapH:"Tu mapa de poderes",
+ second:(n,s)=>`Tu segundo poder es <b style="color:var(--paper)">${n}</b> (${s}). Refuerza tu don principal y te indica hacia dónde dirigirlo.`,
+ showsH:"Cómo se manifiesta tu don", levelH:"Nivel de despertar",
+ shadowH:"La sombra del arquetipo: cuando el poder está cerrado", shadowLead:"Un don dormido no desaparece. Busca una salida y, a menudo, destruye. Fíjate en qué te resulta familiar:",
+ practicesH:g=>`Prácticas de 7 días para ${g}`,
+ bridge:"Pero las prácticas son solo el comienzo. Para que tu don se abra, necesitas entender de dónde viene y qué quiere de ti.",
+ bookH:n=>`Por qué la ${n} se reconocerá en «Soy una bruja»`,
+ bookP2:"Es una novela sobre el destino, el amor, el misterio y el poder, basada en hechos reales. La eligen quienes sienten que dentro de sí hay más de lo que suelen mostrar. Muchas lectoras cuentan que el libro les «abrió» algo que intuían desde hacía años.",
+ offerEyebrow:"Solo para quienes hicieron el test", bookTitle:"«Soy una bruja. La vida antes y después»",
+ offerList:n=>["Libro electrónico: ePub + PDF","Llega justo después del pago: empieza a leer en 2 minutos","Una historia basada en hechos reales",`Una clave para tu arquetipo: ${n}`],
+ langNote:"El libro está en ruso.",
+ offerBtn:p=>`Quiero el libro por ${p} ₽`, freeLink:"Leer primero 3 capítulos gratis →",
+ social:"Superventas de 2025 · Más de 1400 compras en los últimos 30 días",
+ shareBtn:"Compartir resultado", againBtn:"Repetir el test", copied:"Enlace copiado ✓",
+ shareTitle:"Test: qué poder se oculta en ti", shareText:(n,s)=>`Mi arquetipo de poder es ${n} (${s}). ¿Qué poder se oculta en ti?`,
+ footerDisc:"Un test literario de autoconocimiento inspirado en la novela de Victoria Bain «Soy una bruja». No es una evaluación psicológica ni médica.",
+ footerSite:"Web de la autora", footerLegal:"Términos y privacidad", footerCopy:"© 2026 Victoria Bain",
+ sticky:p=>`«Soy una bruja» por ${p} ₽`, coverAlt:"Portada del libro «Soy una bruja. La vida antes y después»", coverFallback:["Soy una bruja","Victoria Bain"]
+}};
+
+/* ---------- Архетипы EN / PT / ES (RU — в основном скрипте) ---------- */
+const A_EN = {
+ seer:{gen:"the Seer",name:"Seer",roman:"I",sub:"the gift of clairvoyance",short:"intuition and premonitions",
+  essence:"Your power is knowing without explanation. You see the truth about people and events before it becomes obvious. Information comes to you in flashes: an image, a sensation in the body, a sudden certainty. You are often right, but rarely able to prove how you know.",
+  shows:["you know who’s calling before you look at the screen","you sense a lie — even when the person is smiling","before important events you feel anxiety or, the opposite, a quiet certainty","people come to you for advice, and your words later come true"],
+  shadow:["you see more than you want to and get tired of “excess knowing”","you drown out intuition with logic — and regret it: “I knew it”","anxiety, intrusive dark thoughts, insomnia","the feeling that no one understands you"],
+  practices:[["Morning","Three images","Right after waking, before touching your phone, close your eyes and write down the first three images or words. In the evening, compare them with your day."],["Day","First sensation","Before any decision, listen to your body for 10 seconds: where it tightens, where it warms. Write it down and check how it matched."],["Evening","Five minutes of silence","Five minutes with no sound and no screens. Intuition speaks quietly — noise drowns it out."]],
+  book:"Diana, the heroine, one day begins to see things that don’t fit into logic. At first she is frightened and tries to “switch it off” — as many Seers do. Her path will show you what happens when you stop resisting your own knowing."},
+ dreamer:{gen:"the Dreamer",name:"Dreamer",roman:"II",sub:"the gift of dreams",short:"prophetic and lucid dreams",
+  essence:"Your power opens at night. Dreams aren’t noise for you but a second world where you receive hints, answers and warnings. Many Dreamers can realize they are dreaming and change the course of the dream. Your subconscious speaks to you in images — and it speaks a lot.",
+  shows:["vivid, story-like dreams you remember for years","dreams that later come true — fully or in details","moments of awareness: “I know I’m dreaming”","decisions you wake up with in the morning"],
+  shadow:["heavy, anxious dreams and feeling drained in the morning","escaping into fantasy when reality feels bland","people call you “not of this world”, and you start to feel ashamed of your depth","insomnia — a power with no outlet keeps you awake"],
+  practices:[["Morning","Dream journal","Keep a notebook by your bed. Write down your dream right away, even fragments. Within a week you’ll notice recurring symbols."],["Day","Reality check","Several times a day ask yourself: “Am I dreaming?” — and look at your palms. This habit will carry into your dreams and bring lucidity."],["Evening","A question for the dream","Before sleep, phrase one question and repeat it silently as you fall asleep. In the morning, write down everything you dreamed."]],
+  book:"Diana’s memories come to her as pictures that are too clear, too alive — on the edge of sleep and waking. In “I Am a Witch” you’ll see how images that seem like fantasy turn out to be memory and guidance."},
+ healer:{gen:"the Healer",name:"Healer",roman:"III",sub:"the gift of healing",short:"empathy and healing hands",
+  essence:"Your power is to feel and to restore. You sense other people’s states in your body, people feel lighter around you, and your hands often “know” where it hurts. It is the ancient gift of wise women: healing with a word, a touch, a presence.",
+  shows:["people want to open up to you, even strangers","you physically feel someone else’s pain or anxiety","after your hug or your words, someone truly feels better","plants, animals and children are calmer around you"],
+  shadow:["you rescue everyone but yourself, and burn out","after time with certain people — emptiness and illness","you can’t say no and live other people’s problems","resentment that your care isn’t needed"],
+  practices:[["Morning","Palms","Rub your palms together for 30 seconds, hold them 5 cm apart and feel the warmth or tingling between them. This is your instrument — learn to sense it."],["Day","Whose is this?","When heaviness suddenly rolls in, ask yourself: “Is this mine or someone else’s?” One question is often enough to let it go."],["Evening","Water","In the shower, imagine the water washing away everything that isn’t yours from the day. A Healer needs cleansing every day."]],
+  book:"At the heart of “I Am a Witch” is the story of Diana’s miraculous healing — and, according to the author, it isn’t invented. For a Healer, this is a book about where the power to restore — yourself and others — comes from."},
+ queen:{gen:"the Queen",name:"Queen",roman:"IV",sub:"the power of word and intention",short:"willpower and the power of words",
+  essence:"Your power is creating reality through intention. When you truly want something, the world adjusts. Your words carry weight — for good and for bad. You were born to lead, make decisions and build, as ancient queens built their cities.",
+  shows:["what you say in anger comes true — sometimes frighteningly precisely","you easily inspire people with an idea","in a crisis you pull yourself together and take everything on","wishes come true when you stop doubting"],
+  shadow:["controlling everything and everyone — and huge fatigue from it","anger that destroys relationships","“I’ll do it all myself” — and loneliness at the top","when your power is suppressed: apathy, as if your inner fire went out"],
+  practices:[["Morning","One intention","Say one intention for the day out loud — in the present tense, as if already done. In the evening, note what came true."],["Day","Clean words","For a whole day, don’t speak badly of yourself or others — not even as a joke. For a Queen, a word is more than a sound."],["Evening","Fire","Light a candle and look at the flame for 5 minutes, letting go of what you couldn’t control."]],
+  book:"Diana one day realizes that she was once Dido — the Queen of Carthage. In “I Am a Witch” the Queen will recognize her own nature: power, sacrifice and the price of decisions that change destinies."},
+ keeper:{gen:"the Keeper of Memory",name:"Keeper of Memory",roman:"V",sub:"memory of ancestors and past lives",short:"memory of past lives",
+  essence:"Your power is a memory deeper than one lifetime. You are drawn to certain eras, places and cultures — as if you came from there. Your ancestors speak through you, and perhaps your past incarnations too. You are a connecting link: through you, your lineage can heal.",
+  shows:["strong déjà vu and “memories” that shouldn’t be possible","an inexplicable pull toward ancient cities, languages, history","you notice repeating family destinies earlier than others","grandmothers, ancestors and loved ones who have passed come to you in dreams"],
+  shadow:["you live out someone else’s destiny, repeating family patterns","longing for something you can’t name","the feeling of being “in the wrong place” and “in the wrong time”","fears without a reason — as if they belonged to someone else"],
+  practices:[["Morning","Names of your line","Write down the names of all the women in your family you remember: mother, grandmothers, great-grandmothers. Next to each, one quality you also have."],["Day","The call of a place","Notice which places, objects and melodies give you an inexplicable feeling of “home”. These are the threads of your memory."],["Evening","Gratitude","Before sleep, silently thank your ancestors. A simple ritual that lifts the weight you carry “not from yourself”."]],
+  book:"“I Am a Witch” is a book about you. Diana, a modern woman, remembers her past life — Dido, Queen of Carthage. You’ll recognize in this story what you yourself feel but don’t dare to name."}
+};
+const A_PT = {
+ seer:{gen:"a Vidente",name:"Vidente",roman:"I",sub:"o dom da clarividência",short:"intuição e pressentimentos",
+  essence:"O seu poder é saber sem explicação. Você enxerga a verdade sobre pessoas e acontecimentos antes que ela se torne óbvia. A informação chega em lampejos: uma imagem, uma sensação no corpo, uma certeza repentina. Você costuma acertar, mas raramente consegue provar como sabe.",
+  shows:["você sabe quem está ligando antes de olhar a tela","percebe a mentira — mesmo quando a pessoa sorri","antes de acontecimentos importantes sente ansiedade ou, ao contrário, uma certeza tranquila","as pessoas pedem os seus conselhos, e as suas palavras depois se cumprem"],
+  shadow:["você vê mais do que gostaria e se cansa do “saber demais”","abafa a intuição com a lógica — e depois se arrepende: “eu sabia”","ansiedade, pensamentos sombrios, insônia","a sensação de que ninguém te entende"],
+  practices:[["Manhã","Três imagens","Logo ao acordar, sem pegar o celular, feche os olhos e anote as três primeiras imagens ou palavras. À noite, compare com o seu dia."],["Dia","Primeira sensação","Antes de qualquer decisão, escute o corpo por 10 segundos: onde aperta, onde aquece. Anote e confira o quanto coincidiu."],["Noite","Cinco minutos de silêncio","Cinco minutos sem sons e sem telas. A intuição fala baixinho — o barulho a abafa."]],
+  book:"Diana, a heroína, um dia começa a ver o que não cabe na lógica. No início ela se assusta e tenta “desligar” isso — como muitas Videntes. O caminho dela vai mostrar o que acontece quando você para de resistir ao próprio saber."},
+ dreamer:{gen:"a Sonhadora",name:"Sonhadora",roman:"II",sub:"o dom dos sonhos",short:"sonhos proféticos e lúcidos",
+  essence:"O seu poder se abre à noite. Para você, sonhos não são ruído, e sim um segundo mundo onde recebe pistas, respostas e avisos. Muitas Sonhadoras conseguem perceber que estão sonhando e mudar o rumo do sonho. O seu inconsciente fala por imagens — e fala muito.",
+  shows:["sonhos vívidos, como filmes, que você lembra por anos","sonhos que depois se realizam — inteiros ou em detalhes","momentos de lucidez: “sei que estou sonhando”","decisões com as quais você acorda de manhã"],
+  shadow:["sonhos pesados e ansiosos e cansaço ao acordar","fuga para a fantasia quando a realidade parece sem graça","te chamam de “fora deste mundo”, e você começa a ter vergonha da sua profundidade","insônia — um poder sem saída não deixa dormir"],
+  practices:[["Manhã","Diário de sonhos","Deixe um caderno ao lado da cama. Anote o sonho na hora, mesmo que sejam fragmentos. Em uma semana você vai notar símbolos que se repetem."],["Dia","Teste de realidade","Várias vezes ao dia pergunte: “Estou sonhando?” — e olhe para as palmas das mãos. O hábito vai passar para o sonho e trazer lucidez."],["Noite","Uma pergunta ao sonho","Antes de dormir, formule uma pergunta e repita mentalmente ao adormecer. De manhã, anote tudo o que sonhou."]],
+  book:"As lembranças chegam a Diana como imagens claras demais, vivas demais — entre o sono e a vigília. Em “Eu sou uma bruxa” você vai ver como imagens que parecem fantasia se revelam memória e orientação."},
+ healer:{gen:"a Curandeira",name:"Curandeira",roman:"III",sub:"o dom da cura",short:"empatia e mãos que curam",
+  essence:"O seu poder é sentir e restaurar. Você percebe o estado dos outros no próprio corpo, as pessoas ficam mais leves ao seu lado, e as suas mãos muitas vezes “sabem” onde dói. É o antigo dom das benzedeiras: curar com a palavra, o toque, a presença.",
+  shows:["as pessoas querem desabafar com você, até desconhecidos","você sente fisicamente a dor ou a ansiedade de outra pessoa","depois do seu abraço ou das suas palavras, a pessoa realmente melhora","plantas, animais e crianças ficam mais calmos perto de você"],
+  shadow:["você salva todo mundo, menos a si mesma, e se esgota","depois de certas pessoas — vazio e doença","não sabe dizer não e vive os problemas dos outros","mágoa por sentir que o seu cuidado não é valorizado"],
+  practices:[["Manhã","As palmas","Esfregue as palmas por 30 segundos, afaste-as 5 cm e sinta o calor ou o formigamento entre elas. Este é o seu instrumento — aprenda a senti-lo."],["Dia","De quem é isto?","Quando um peso surgir de repente, pergunte: “Isto é meu ou de outra pessoa?” Muitas vezes basta essa pergunta para soltar."],["Noite","Água","No banho, imagine a água levando embora tudo o que não é seu do dia. A Curandeira precisa de limpeza todos os dias."]],
+  book:"No centro de “Eu sou uma bruxa” está a história da cura milagrosa de Diana — e, segundo a autora, ela não é inventada. Para a Curandeira, é um livro sobre a origem da força de restaurar — a si mesma e aos outros."},
+ queen:{gen:"a Rainha",name:"Rainha",roman:"IV",sub:"o poder da palavra e da intenção",short:"força de vontade e da palavra",
+  essence:"O seu poder é criar a realidade pela intenção. Quando você quer algo de verdade, o mundo se ajusta. As suas palavras têm peso — para o bem e para o mal. Você nasceu para liderar, decidir e construir, como as rainhas antigas construíam as suas cidades.",
+  shows:["o que você diz com raiva se cumpre — às vezes com uma precisão assustadora","você contagia as pessoas com uma ideia facilmente","na crise você se recompõe e assume tudo","os desejos se realizam quando você para de duvidar"],
+  shadow:["controle de tudo e de todos — e um cansaço enorme","raiva que destrói relacionamentos","“eu faço tudo sozinha” — e solidão no topo","quando o poder é reprimido: apatia, como se o fogo interior tivesse apagado"],
+  practices:[["Manhã","Uma intenção","Diga em voz alta uma intenção para o dia — no presente, como se já tivesse acontecido. À noite, anote o que se cumpriu."],["Dia","Palavra limpa","Durante um dia inteiro, não fale mal de si nem dos outros — nem de brincadeira. Para a Rainha, a palavra é mais que um som."],["Noite","Fogo","Acenda uma vela e olhe a chama por 5 minutos, soltando o que não conseguiu controlar."]],
+  book:"Diana um dia percebe que já foi Dido — a rainha de Cartago. Em “Eu sou uma bruxa” a Rainha vai reconhecer a própria natureza: poder, sacrifícios e o preço das decisões que mudam destinos."},
+ keeper:{gen:"a Guardiã da Memória",name:"Guardiã da Memória",roman:"V",sub:"memória ancestral e de vidas passadas",short:"memória de vidas passadas",
+  essence:"O seu poder é uma memória mais profunda do que uma única vida. Você se sente atraída por certas épocas, lugares e culturas — como se viesse de lá. Os seus ancestrais falam através de você, e talvez as suas encarnações passadas também. Você é um elo: através de você, a sua linhagem pode se curar.",
+  shows:["déjà vu intenso e “lembranças” que não deveriam existir","atração inexplicável por cidades antigas, idiomas, história","você percebe destinos que se repetem na família antes dos outros","avós, ancestrais e entes queridos que partiram aparecem nos seus sonhos"],
+  shadow:["você vive o destino de outra pessoa, repetindo padrões da família","saudade de algo que não consegue nomear","a sensação de estar “no lugar errado” e “no tempo errado”","medos sem motivo — como se fossem de outra pessoa"],
+  practices:[["Manhã","Nomes da linhagem","Escreva o nome de todas as mulheres da família de que se lembra: mãe, avós, bisavós. Ao lado de cada uma, uma qualidade que você também tem."],["Dia","O chamado do lugar","Observe quais lugares, objetos e melodias despertam uma sensação inexplicável de “casa”. São os fios da sua memória."],["Noite","Gratidão","Antes de dormir, agradeça mentalmente aos seus ancestrais. Um ritual simples que alivia o peso que não é seu."]],
+  book:"“Eu sou uma bruxa” é um livro sobre você. Diana, uma mulher moderna, se lembra da vida passada — Dido, rainha de Cartago. Você vai reconhecer nesta história o que sente, mas não ousa nomear."}
+};
+const A_ES = {
+ seer:{gen:"la Vidente",name:"Vidente",roman:"I",sub:"el don de la clarividencia",short:"intuición y presentimientos",
+  essence:"Tu poder es saber sin explicación. Ves la verdad de las personas y de los hechos antes de que sea evidente. La información te llega en destellos: una imagen, una sensación en el cuerpo, una certeza repentina. Sueles acertar, pero rara vez puedes demostrar cómo lo sabes.",
+  shows:["sabes quién llama antes de mirar la pantalla","percibes la mentira, incluso cuando la persona sonríe","antes de momentos importantes sientes ansiedad o, al contrario, una certeza tranquila","te piden consejo y tus palabras luego se cumplen"],
+  shadow:["ves más de lo que quisieras y te cansa «saber de más»","acallas la intuición con la lógica y luego te arrepientes: «lo sabía»","ansiedad, pensamientos oscuros, insomnio","la sensación de que nadie te entiende"],
+  practices:[["Mañana","Tres imágenes","Nada más despertar, sin tocar el móvil, cierra los ojos y anota las tres primeras imágenes o palabras. Por la noche, compáralas con tu día."],["Día","Primera sensación","Antes de cualquier decisión, escucha tu cuerpo durante 10 segundos: dónde se tensa, dónde se calienta. Anótalo y comprueba cuánto coincidió."],["Noche","Cinco minutos de silencio","Cinco minutos sin sonidos ni pantallas. La intuición habla bajito y el ruido la ahoga."]],
+  book:"Diana, la protagonista, un día empieza a ver cosas que no encajan en la lógica. Al principio se asusta e intenta «apagarlo», como muchas Videntes. Su camino te mostrará lo que pasa cuando dejas de resistirte a tu propio saber."},
+ dreamer:{gen:"la Soñadora",name:"Soñadora",roman:"II",sub:"el don de los sueños",short:"sueños proféticos y lúcidos",
+  essence:"Tu poder se abre de noche. Para ti los sueños no son ruido, sino un segundo mundo donde recibes pistas, respuestas y advertencias. Muchas Soñadoras logran darse cuenta de que sueñan y cambiar el curso del sueño. Tu subconsciente te habla con imágenes, y habla mucho.",
+  shows:["sueños vívidos, como películas, que recuerdas durante años","sueños que luego se cumplen, enteros o en detalles","momentos de lucidez: «sé que estoy soñando»","decisiones con las que te despiertas por la mañana"],
+  shadow:["sueños pesados y angustiosos y cansancio al despertar","huida a la fantasía cuando la realidad parece sosa","te llaman «de otro mundo» y empiezas a avergonzarte de tu profundidad","insomnio: un poder sin salida no te deja dormir"],
+  practices:[["Mañana","Diario de sueños","Deja un cuaderno junto a la cama. Escribe el sueño enseguida, aunque sean fragmentos. En una semana notarás símbolos que se repiten."],["Día","Prueba de realidad","Varias veces al día pregúntate: «¿Estoy soñando?» y mírate las palmas. El hábito pasará al sueño y te traerá lucidez."],["Noche","Una pregunta al sueño","Antes de dormir, formula una pregunta y repítela mentalmente al quedarte dormida. Por la mañana, anota todo lo que soñaste."]],
+  book:"Los recuerdos llegan a Diana como imágenes demasiado claras, demasiado vivas, entre el sueño y la vigilia. En «Soy una bruja» verás cómo imágenes que parecen fantasía resultan ser memoria y guía."},
+ healer:{gen:"la Sanadora",name:"Sanadora",roman:"III",sub:"el don de sanar",short:"empatía y manos que sanan",
+  essence:"Tu poder es sentir y restaurar. Percibes el estado de los demás en tu propio cuerpo, la gente se siente más ligera a tu lado y tus manos a menudo «saben» dónde duele. Es el antiguo don de las curanderas: sanar con la palabra, el contacto, la presencia.",
+  shows:["la gente quiere desahogarse contigo, incluso desconocidos","sientes físicamente el dolor o la ansiedad de otra persona","tras tu abrazo o tus palabras, alguien de verdad se siente mejor","plantas, animales y niños están más tranquilos a tu lado"],
+  shadow:["salvas a todos menos a ti misma y te agotas","después de ciertas personas: vacío y enfermedad","no sabes decir que no y vives los problemas ajenos","resentimiento porque tu cuidado no se valora"],
+  practices:[["Mañana","Las palmas","Frota las palmas 30 segundos, sepáralas 5 cm y siente el calor o el cosquilleo entre ellas. Es tu instrumento: aprende a sentirlo."],["Día","¿De quién es esto?","Cuando de pronto llegue un peso, pregúntate: «¿Esto es mío o de otra persona?» A menudo basta esa pregunta para soltarlo."],["Noche","Agua","En la ducha, imagina que el agua se lleva todo lo que no es tuyo del día. La Sanadora necesita limpiarse cada día."]],
+  book:"En el centro de «Soy una bruja» está la historia de la curación milagrosa de Diana y, según la autora, no es inventada. Para la Sanadora, es un libro sobre el origen de la fuerza para restaurar, a sí misma y a los demás."},
+ queen:{gen:"la Reina",name:"Reina",roman:"IV",sub:"el poder de la palabra y la intención",short:"voluntad y poder de la palabra",
+  essence:"Tu poder es crear la realidad con la intención. Cuando de verdad quieres algo, el mundo se ajusta. Tus palabras tienen peso, para bien y para mal. Naciste para liderar, decidir y construir, como las reinas antiguas construían sus ciudades.",
+  shows:["lo que dices con enfado se cumple, a veces con una precisión que asusta","contagias fácilmente a la gente con una idea","en una crisis te recompones y lo asumes todo","los deseos se cumplen cuando dejas de dudar"],
+  shadow:["controlarlo todo y a todos, y un cansancio enorme","ira que destruye las relaciones","«lo hago todo yo sola», y soledad en la cima","cuando el poder se reprime: apatía, como si el fuego interior se apagara"],
+  practices:[["Mañana","Una intención","Di en voz alta una intención para el día, en presente, como si ya se hubiera cumplido. Por la noche, anota lo que se cumplió."],["Día","Palabra limpia","Durante todo un día no hables mal de ti ni de los demás, ni en broma. Para la Reina, la palabra es más que un sonido."],["Noche","Fuego","Enciende una vela y mira la llama 5 minutos, soltando lo que no pudiste controlar."]],
+  book:"Diana un día se da cuenta de que una vez fue Dido, la reina de Cartago. En «Soy una bruja» la Reina reconocerá su propia naturaleza: el poder, los sacrificios y el precio de las decisiones que cambian destinos."},
+ keeper:{gen:"la Guardiana de la Memoria",name:"Guardiana de la Memoria",roman:"V",sub:"memoria ancestral y de vidas pasadas",short:"memoria de vidas pasadas",
+  essence:"Tu poder es una memoria más profunda que una sola vida. Te atraen ciertas épocas, lugares y culturas, como si vinieras de allí. A través de ti hablan tus ancestros y quizá también tus encarnaciones pasadas. Eres un eslabón: a través de ti, tu linaje puede sanar.",
+  shows:["déjà vu intensos y «recuerdos» que no deberían existir","una atracción inexplicable por ciudades antiguas, idiomas, historia","notas antes que nadie los destinos que se repiten en la familia","abuelas, ancestros y seres queridos fallecidos aparecen en tus sueños"],
+  shadow:["vives un destino ajeno, repitiendo patrones familiares","nostalgia por algo que no sabes nombrar","la sensación de estar «en el lugar equivocado» y «en la época equivocada»","miedos sin motivo, como si fueran de otra persona"],
+  practices:[["Mañana","Nombres del linaje","Escribe los nombres de todas las mujeres de tu familia que recuerdes: madre, abuelas, bisabuelas. Junto a cada una, una cualidad que tú también tienes."],["Día","La llamada del lugar","Observa qué lugares, objetos y melodías te dan una inexplicable sensación de «hogar». Son los hilos de tu memoria."],["Noche","Gratitud","Antes de dormir, da las gracias mentalmente a tus ancestros. Un ritual sencillo que quita el peso que no es tuyo."]],
+  book:"«Soy una bruja» es un libro sobre ti. Diana, una mujer moderna, recuerda su vida pasada: Dido, reina de Cartago. Reconocerás en esta historia lo que sientes, pero no te atreves a nombrar."}
+};
+
+/* ---------- Вопросы: тексты; баллы общие (Q_SCORE) ---------- */
+const Q_TXT = {
+en:[
+ ["You walk into an unfamiliar room full of people. What do you notice first?",["The overall mood — people’s feelings seem to pass into me","Suddenly the feeling: “I’ve been here before”","I immediately understand who’s in charge and how it will all end","I want to change something: the light, the order, the course of the conversation","Details that remind me of something from my dream"]],
+ ["What kind of dreams do you have most often?",["Vivid, like a film. Sometimes I realize I’m dreaming","About other eras and places I’ve never been","Ones that later come true","About loved ones: I help, rescue, heal","I barely remember them, but I wake up with a ready decision"]],
+ ["When you need to make an important decision, you rely on…",["An inner “I know” that I can’t explain","Signs and hints that come in dreams","How it will affect the people I love","My will: once I’ve decided, so it shall be","The experience of my lineage: what my mother or grandmother would do"]],
+ ["What do people tell you most often?",["“It’s easier when you’re around”","“How did you know that?”","“You seem to be from another time”","“You’re always in the clouds”","“It’s better not to argue with you”"]],
+ ["Which of these has happened to you?",["I say something in anger — and it comes true","Strong déjà vu or “memories” that shouldn’t be possible","A premonition that turned out to be right","Someone else’s pain or anxiety felt in my own body","In a dream I realized I was dreaming and could control it"]],
+ ["Which element resonates with you most?",["Fire — passion, will, movement","Water — feelings, cleansing, flow","Air — clarity, thoughts, signs","Earth — roots, lineage, ancient stones","Night and moonlight"]],
+ ["Which image feels closest to you?",["A queen on the throne of an ancient city by the sea","A wise woman with herbs by the fire","A priestess at the oracle, seeing the future","A woman who travels between worlds in her dreams","An old book with the names of all the women of her line"]],
+ ["What do you fear most — honestly?",["Losing control of my life","Not being able to help the people I love","Learning something I don’t want to know","That reality will turn out duller than my dreams","Repeating someone’s unhappy fate"]],
+ ["How have you been feeling the last few months?",["Full of energy, everything flows, I’m in the zone","It varies: my strength comes and goes","Tired for no reason, as if living someone else’s life","Everything is falling apart: relationships, money, health — and I don’t know why"]],
+ ["How do you treat your “oddities” — dreams, premonitions, sensations?",["I trust them and use them","I notice them but don’t know what to do with them","I try to ignore them: “it’s all just fantasy”","I’m afraid of them and hide them from others"]]],
+pt:[
+ ["Você entra numa sala desconhecida cheia de gente. O que percebe primeiro?",["O clima geral — os sentimentos das pessoas parecem passar para mim","De repente a sensação: “eu já estive aqui”","Entendo logo quem manda ali e como tudo vai terminar","Tenho vontade de mudar algo: a luz, a ordem, o rumo da conversa","Detalhes parecidos com algo do meu sonho"]],
+ ["Com que tipo de sonho você sonha com mais frequência?",["Vívidos, como um filme. Às vezes percebo que estou sonhando","Com outras épocas e lugares onde nunca estive","Sonhos que depois se realizam","Com pessoas queridas: eu ajudo, salvo, curo","Quase não lembro, mas acordo com uma decisão pronta"]],
+ ["Quando precisa tomar uma decisão importante, você se apoia em…",["Um “eu sei” interior que não consigo explicar","Sinais e pistas que chegam nos sonhos","Como isso vai afetar as pessoas que amo","Minha vontade: decidi — então será assim","Na experiência da família: o que minha mãe ou minha avó fariam"]],
+ ["O que as pessoas mais costumam dizer de você?",["“Perto de você tudo fica mais leve”","“Como você sabia disso?”","“Você parece de outra época”","“Você vive no mundo da lua”","“Com você é melhor não discutir”"]],
+ ["Qual destas coisas já aconteceu com você?",["Digo algo com raiva — e se cumpre","Déjà vu forte ou “lembranças” que não deveriam existir","Um pressentimento que se confirmou","A dor ou a ansiedade de outra pessoa sentida no meu corpo","Num sonho percebi que estava sonhando e consegui controlá-lo"]],
+ ["Que elemento ressoa mais em você?",["Fogo — paixão, vontade, movimento","Água — sentimentos, purificação, fluxo","Ar — clareza, pensamentos, sinais","Terra — raízes, linhagem, pedras antigas","A noite e a luz da lua"]],
+ ["Qual imagem está mais próxima de você?",["Uma rainha no trono de uma cidade antiga à beira-mar","Uma benzedeira com ervas junto ao fogo","Uma sacerdotisa no oráculo, vendo o futuro","Uma mulher que viaja entre mundos nos sonhos","Um livro antigo com os nomes de todas as mulheres da família"]],
+ ["Do que você tem mais medo — sinceramente?",["Perder o controle da minha vida","Não conseguir ajudar quem eu amo","Descobrir o que não quero saber","Que a realidade seja mais sem graça que os meus sonhos","Repetir o destino infeliz de alguém"]],
+ ["Como você tem se sentido nos últimos meses?",["Com muita energia, tudo se encaixa, estou no fluxo","Varia: a força vem e vai","Cansada sem motivo, como se vivesse a vida de outra pessoa","Tudo desmorona: relacionamentos, dinheiro, saúde — e não entendo por quê"]],
+ ["Como você lida com as suas “esquisitices” — sonhos, pressentimentos, sensações?",["Confio nelas e uso","Percebo, mas não sei o que fazer com elas","Tento não dar atenção: “é tudo fantasia”","Tenho medo delas e escondo dos outros"]]],
+es:[
+ ["Entras en una sala desconocida llena de gente. ¿Qué notas primero?",["El ambiente: los sentimientos de la gente parecen pasar a mí","De pronto la sensación: «ya estuve aquí»","Enseguida entiendo quién manda y cómo terminará todo","Quiero cambiar algo: la luz, el orden, el rumbo de la conversación","Detalles parecidos a algo de mi sueño"]],
+ ["¿Qué sueños tienes con más frecuencia?",["Vívidos, como una película. A veces me doy cuenta de que sueño","Sobre otras épocas y lugares donde nunca estuve","Sueños que luego se cumplen","Sobre seres queridos: ayudo, rescato, curo","Casi no los recuerdo, pero despierto con una decisión tomada"]],
+ ["Cuando tienes que tomar una decisión importante, te apoyas en…",["Un «lo sé» interior que no puedo explicar","Señales y pistas que llegan en sueños","Cómo afectará a las personas que quiero","Mi voluntad: lo decidí, así será","La experiencia de mi linaje: qué haría mi madre o mi abuela"]],
+ ["¿Qué te dice la gente con más frecuencia?",["«Contigo todo es más fácil»","«¿Cómo lo sabías?»","«Pareces de otra época»","«Siempre estás en las nubes»","«Contigo es mejor no discutir»"]],
+ ["¿Cuál de estas cosas te ha pasado?",["Digo algo con rabia y se cumple","Déjà vu intensos o «recuerdos» que no deberían existir","Un presentimiento que resultó cierto","Sentí en mi cuerpo el dolor o la ansiedad de otra persona","En un sueño me di cuenta de que soñaba y pude controlarlo"]],
+ ["¿Qué elemento resuena más contigo?",["Fuego: pasión, voluntad, movimiento","Agua: sentimientos, limpieza, fluir","Aire: claridad, pensamientos, señales","Tierra: raíces, linaje, piedras antiguas","La noche y la luz de la luna"]],
+ ["¿Qué imagen sientes más cercana?",["Una reina en el trono de una ciudad antigua junto al mar","Una curandera con hierbas junto al fuego","Una sacerdotisa ante el oráculo, viendo el futuro","Una mujer que viaja entre mundos en sueños","Un libro antiguo con los nombres de todas las mujeres de su linaje"]],
+ ["¿A qué le temes más, sinceramente?",["A perder el control de mi vida","A no poder ayudar a quienes quiero","A saber lo que no quiero saber","A que la realidad sea más aburrida que mis sueños","A repetir el destino infeliz de alguien"]],
+ ["¿Cómo te has sentido en los últimos meses?",["Con mucha energía, todo encaja, estoy en mi flujo","Depende: la fuerza va y viene","Cansada sin motivo, como si viviera una vida ajena","Todo se derrumba: relaciones, dinero, salud, y no entiendo por qué"]],
+ ["¿Cómo tratas tus «rarezas»: sueños, presentimientos, sensaciones?",["Confío en ellas y las uso","Las noto, pero no sé qué hacer con ellas","Intento no hacerles caso: «son fantasías»","Me dan miedo y las escondo de los demás"]]]
+};
+
+const LEVELS_TXT = {
+en:[["Sleeping power","Your gift is closed right now — and judging by your answers, it’s already making itself felt through tiredness, anxiety or the feeling that life is going “the wrong way”. This isn’t a verdict, it’s a signal: your power wants out. Start with the practices below — even just one."],
+ ["Awakening","Your power is waking up: you notice it but don’t fully trust it yet. This is the most important and most fragile stage. If you brush it off now, the gift will fall asleep again. If you support it, it will open very quickly."],
+ ["On the threshold","You already feel your gift and sometimes use it. What’s left is to stop doubting and make it part of your life rather than a coincidence. What you lack is an understanding of how it works — and something to lean on."],
+ ["Awakened power","Your power is at work and you trust it. Now it matters not to lose it and to go deeper: understand its roots and learn to protect yourself. The practices below will help you keep the flow."]],
+pt:[["Poder adormecido","O seu dom está fechado agora — e, pelas suas respostas, já se faz notar através do cansaço, da ansiedade ou da sensação de que a vida vai “pelo caminho errado”. Não é uma sentença, é um sinal: o poder quer sair. Comece pelas práticas abaixo — nem que seja uma."],
+ ["Despertar","O seu poder está despertando: você o percebe, mas ainda não confia totalmente. É a fase mais importante e mais frágil. Se ignorar agora, o dom volta a adormecer. Se apoiá-lo, ele se abre muito rápido."],
+ ["No limiar","Você já sente o seu dom e às vezes o usa. Falta parar de duvidar e torná-lo parte da vida, e não um acaso. O que falta é entender como ele funciona — e ter um apoio."],
+ ["Poder desperto","O seu poder está em ação e você confia nele. Agora importa não perdê-lo e aprofundar: entender as raízes e aprender a se proteger. As práticas abaixo vão ajudar a manter o fluxo."]],
+es:[["Poder dormido","Tu don está cerrado ahora y, por tus respuestas, ya se hace notar a través del cansancio, la ansiedad o la sensación de que la vida va «por mal camino». No es una sentencia, es una señal: tu poder quiere salir. Empieza por las prácticas de abajo, aunque sea una."],
+ ["Despertar","Tu poder está despertando: lo notas, pero aún no confías del todo en él. Es la etapa más importante y más frágil. Si lo ignoras ahora, el don volverá a dormirse. Si lo apoyas, se abrirá muy rápido."],
+ ["En el umbral","Ya sientes tu don y a veces lo usas. Falta dejar de dudar y hacerlo parte de tu vida, no una casualidad. Te falta entender cómo funciona y tener un apoyo."],
+ ["Poder despierto","Tu poder está en acción y confías en él. Ahora importa no perderlo y profundizar: entender sus raíces y aprender a protegerte. Las prácticas de abajo te ayudarán a mantener el flujo."]]
+};
+
+
+/* ================= СБОРКА ЯЗЫКОВ ================= */
+const T = { ru:{A, Q, L:LEVELS} };
+[["en",A_EN],["pt",A_PT],["es",A_ES]].forEach(([l,aa])=>{
+  T[l] = {
+    A: aa,
+    Q: Q_TXT[l].map((x,i)=>({q:x[0], lvl:Q[i].lvl, o:x[1].map((t,j)=>[t, Q[i].o[j][1]])})),
+    L: LEVELS.map((lv,i)=>Object.assign({}, lv, {name:LEVELS_TXT[l][i][0], text:LEVELS_TXT[l][i][1]}))
+  };
+});
+const LANGS = ["ru","en","pt","es"];
+function detectLang(){
+  const p = new URLSearchParams(location.search).get('lang');
+  if (LANGS.includes(p)) return p;
+  try{ const s = localStorage.getItem('vb_lang'); if (LANGS.includes(s)) return s; }catch(e){}
+  const n = (navigator.language||'ru').slice(0,2).toLowerCase();
+  if (["ru","uk","be","kk"].includes(n)) return "ru";
+  return LANGS.includes(n) ? n : "en";
+}
+let lang = detectLang();
+const t = () => UI[lang];
+const D = () => T[lang];
+
+/* ================= ЛОГИКА ================= */
+let step=0, current='landing', lastResult=null; const answers=[];
+const $=s=>document.querySelector(s);
+function show(id){current=id;document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$('#'+id).classList.add('active');window.scrollTo({top:0,behavior:'instant'}); if(id!=='result') $('#sticky').classList.remove('show');}
+
 (()=>{const s=$('#stars');for(let i=0;i<60;i++){const e=document.createElement('i');e.style.left=Math.random()*100+'%';e.style.top=Math.random()*100+'%';e.style.animationDelay=(Math.random()*5)+'s';e.style.animationDuration=(3+Math.random()*5)+'s';s.appendChild(e);}})();
 
-// превью архетипов
-$('#archPreview').innerHTML=ORDER.map(k=>`<div class="arch">${ICONS[k]}<b>${A[k].name}</b><span>${A[k].short}</span></div>`).join('');
+function setLang(l, rerender=true){
+  lang=l; try{localStorage.setItem('vb_lang',l);}catch(e){}
+  document.documentElement.lang=l;
+  document.title=t().metaTitle;
+  const md=document.querySelector('meta[name=description]'); if(md) md.content=t().metaDesc;
+  document.querySelectorAll('#langbar button').forEach(b=>b.classList.toggle('on',b.dataset.lang===l));
+  $('#qBack').textContent=t().qBack;
+  renderLanding();
+  if(!rerender) return;
+  if(current==='quiz') renderQ();
+  if(current==='result' && lastResult) renderResult(true);
+}
+document.querySelectorAll('#langbar button').forEach(b=>b.onclick=()=>{ if(b.dataset.lang!==lang){ track('lang_'+b.dataset.lang); setLang(b.dataset.lang); } });
 
-document.querySelectorAll('[data-start]').forEach(b=>b.onclick=()=>{track('quiz_start');step=0;answers.length=0;show('quiz');renderQ();});
+function renderLanding(){
+  const u=t(), A=D().A, ORDER=["seer","dreamer","healer","queen","keeper"];
+  $('#landing').innerHTML=`
+  <div class="wrap top">
+    <a class="logo" href="${SITE}/">VICTORIA BAIN<small>${u.logoSub}</small></a>
+  </div>
+  <header class="hero wrap" id="start">
+    <div class="orb" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none" stroke="#d1b478" stroke-width=".7">
+        <circle cx="100" cy="100" r="96" opacity=".5"/><circle cx="100" cy="100" r="80" stroke-dasharray="2 5"/>
+        <circle cx="100" cy="100" r="60" opacity=".6"/>
+        <path d="M100 4 L100 196 M4 100 L196 100 M32 32 L168 168 M168 32 L32 168" opacity=".25"/>
+        <polygon points="100,22 168,140 32,140" opacity=".5"/><polygon points="100,178 32,60 168,60" opacity=".5"/>
+        <g fill="#d1b478" stroke="none"><circle cx="100" cy="4" r="2.5"/><circle cx="196" cy="100" r="2.5"/><circle cx="100" cy="196" r="2.5"/><circle cx="4" cy="100" r="2.5"/></g>
+      </svg>
+      <div class="eye">☾</div>
+    </div>
+    <span class="eyebrow">${u.heroEyebrow}</span>
+    <h1>${u.heroH1}</h1>
+    <p class="lead">${u.heroLead}</p>
+    <button class="btn pulse" data-start>${u.heroBtn}</button>
+    <div class="meta">${u.heroMeta.map(m=>`<span>${m}</span>`).join('')}</div>
+  </header>
+  <section><div class="wrap">
+    <span class="eyebrow">${u.signsEyebrow}</span>
+    <h2 style="margin-top:14px">${u.signsH2}</h2>
+    <div class="signs">${u.signs.map(s=>`<div class="sign"><span class="ico">${s[0]}</span><b>${s[1]}</b>${s[2]}</div>`).join('')}</div>
+  </div></section>
+  <section><div class="narrow warn">
+    <span class="eyebrow">${u.warnEyebrow}</span>
+    <h2 style="margin-top:14px">${u.warnH2}</h2>
+    <p class="lead" style="margin-top:18px">${u.warnLead}</p>
+    <ul>${u.warnList.map(x=>`<li>${x}</li>`).join('')}</ul>
+    <p style="margin-top:22px">${u.warnOutro}</p>
+  </div></section>
+  <section><div class="wrap">
+    <span class="eyebrow">${u.archEyebrow}</span>
+    <h2 style="margin-top:14px">${u.archH2}</h2>
+    <div class="arch-grid">${ORDER.map(k=>`<div class="arch">${ICONS[k]}<b>${A[k].name}</b><span>${A[k].short}</span></div>`).join('')}</div>
+  </div></section>
+  <section><div class="wrap">
+    <span class="eyebrow">${u.getEyebrow}</span>
+    <h2 style="margin-top:14px">${u.getH2}</h2>
+    <div class="get">${u.get.map(g=>`<div><b>${g[0]}</b><p class="muted">${g[1]}</p></div>`).join('')}</div>
+  </div></section>
+  <div class="cta-final narrow">
+    <p class="quote">${u.quote}<br><span class="note" style="font-style:normal;font-family:var(--sans)">${u.quoteBy}</span></p>
+    <button class="btn pulse" data-start>${u.ctaBtn}</button>
+    <p class="note" style="margin-top:16px">${u.disclaimer}</p>
+  </div>`;
+  document.querySelectorAll('[data-start]').forEach(b=>b.onclick=()=>{track('quiz_start');track('quiz_start_'+lang);step=0;answers.length=0;show('quiz');renderQ();});
+}
+
 $('#qBack').onclick=()=>{ if(step>0){step--;renderQ();} };
 
 function renderQ(){
-  const item=Q[step];
+  const Q=D().Q, item=Q[step];
   $('#qCount').textContent=`${step+1} / ${Q.length}`;
   $('#qProg').style.width=((step)/Q.length*100)+'%';
   $('#qBack').disabled=step===0;
-  $('#qCard').innerHTML=`<div class="qanim"><div class="qnum">Вопрос ${step+1}</div><h2 class="qtext">${item.q}</h2>
+  $('#qCard').innerHTML=`<div class="qanim"><div class="qnum">${t().qNum(step+1)}</div><h2 class="qtext">${item.q}</h2>
    <div class="opts">${item.o.map((o,i)=>`<button class="opt${answers[step]===i?' sel':''}" data-i="${i}"><span class="dot"></span><span>${o[0]}</span></button>`).join('')}</div>
-   <p class="note" style="margin-top:18px">Выберите то, что ближе. Первый отклик — самый точный.</p></div>`;
+   <p class="note" style="margin-top:18px">${t().qHint}</p></div>`;
   $('#qCard').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
     answers[step]=+b.dataset.i; b.classList.add('sel');
     setTimeout(()=>{ step++; if(step<Q.length) renderQ(); else finish(); },280);
@@ -478,103 +830,93 @@ function renderQ(){
 function finish(){
   $('#qProg').style.width='100%'; track('quiz_complete');
   show('loading');
-  const t=["Раскладываем ваши ответы…","Ищем вашу ведущую силу…","Смотрим, что скрыто в тени…","Подбираем практики…"];
-  let i=0; $('#loadText').textContent=t[0];
-  const iv=setInterval(()=>{i++; if(i<t.length) $('#loadText').textContent=t[i];},800);
-  setTimeout(()=>{clearInterval(iv);renderResult();},3300);
+  let i=0; $('#loadText').textContent=t().load[0];
+  const iv=setInterval(()=>{i++; if(i<4) $('#loadText').textContent=t().load[i];},800);
+  setTimeout(()=>{clearInterval(iv);lastResult=calc();renderResult(false);},3300);
 }
 
 function calc(){
+  const ORDER=["seer","dreamer","healer","queen","keeper"];
   const sc={seer:0,dreamer:0,healer:0,queen:0,keeper:0}; let lvl=0;
   Q.forEach((item,qi)=>{const a=answers[qi]; if(a==null)return; const v=item.o[a][1];
     if(item.lvl) lvl+=v; else for(const k in v) sc[k]+=v[k];});
   const ranked=ORDER.slice().sort((a,b)=>sc[b]-sc[a]);
   const max=Math.max(...Object.values(sc))||1;
-  const L=LEVELS.find(l=>lvl>=l.min&&lvl<=l.max);
+  const li=LEVELS.findIndex(l=>lvl>=l.min&&lvl<=l.max);
+  const L=LEVELS[li];
   const pct=Math.round(L.pct[0]+(sc[ranked[0]]%5)/4*(L.pct[1]-L.pct[0]));
-  return {sc,ranked,max,L,pct};
+  return {sc,ranked,max,li,pct};
 }
 
-function renderResult(){
-  const {sc,ranked,max,L,pct}=calc();
-  const k=ranked[0], k2=ranked[1], a=A[k], a2=A[k2];
+function renderResult(silent){
+  const u=t(), AA=D().A, {sc,ranked,max,li,pct}=lastResult, L=D().L[li];
+  const k=ranked[0], k2=ranked[1], a=AA[k], a2=AA[k2];
   const total=Object.values(sc).reduce((x,y)=>x+y,0)||1;
-  const url=checkoutUrl(k);
-  $('#stickyBtn').href=url;
+  const url=checkoutUrl(k,lang);
+  $('#stickyBtn').href=url; $('#stickyBtn').textContent=u.sticky(PRICE);
   $('#resBody').innerHTML=`
   <div class="res-head">
-    <span class="eyebrow">Ваш расклад готов</span>
-    <h1 style="font-size:clamp(38px,7vw,60px);margin-top:14px">Ваша сила — <em>${a.name}</em></h1>
+    <span class="eyebrow">${u.resEyebrow}</span>
+    <h1 style="font-size:clamp(38px,7vw,60px);margin-top:14px">${u.resH1(a.name)}</h1>
   </div>
   <div class="tarot"><div class="tarot-in"><div class="roman">${a.roman}</div>${ICONS[k]}<div><div class="tname">${a.name}</div><div class="tsub" style="margin-top:8px">${a.sub}</div></div></div></div>
-
-  <div class="block"><h3>Суть вашего дара</h3><p>${a.essence}</p></div>
-
-  <div class="block"><h3>Ваша карта сил</h3>
-    <div class="bars">${ranked.map((x,i)=>`<div class="bar-row${i===0?' lead-row':''}"><span>${A[x].name}</span><div class="bar"><i data-w="${Math.round(sc[x]/max*100)}"></i></div><span>${Math.round(sc[x]/total*100)}%</span></div>`).join('')}</div>
-    <p class="muted" style="margin-top:18px">Вторая по силе — <b style="color:var(--paper)">${a2.name}</b> (${a2.short}). Она усиливает ваш главный дар и подсказывает, куда его направить.</p>
+  <div class="block"><h3>${u.essenceH}</h3><p>${a.essence}</p></div>
+  <div class="block"><h3>${u.mapH}</h3>
+    <div class="bars">${ranked.map((x,i)=>`<div class="bar-row${i===0?' lead-row':''}"><span>${AA[x].name}</span><div class="bar"><i data-w="${Math.round(sc[x]/max*100)}"></i></div><span>${Math.round(sc[x]/total*100)}%</span></div>`).join('')}</div>
+    <p class="muted" style="margin-top:18px">${u.second(a2.name,a2.short)}</p>
   </div>
-
-  <div class="block"><h3>Как ваш дар проявляется</h3><ul>${a.shows.map(s=>`<li>${s}</li>`).join('')}</ul></div>
-
-  <div class="block"><h3>Уровень раскрытия</h3>
+  <div class="block"><h3>${u.showsH}</h3><ul>${a.shows.map(s=>`<li>${s}</li>`).join('')}</ul></div>
+  <div class="block"><h3>${u.levelH}</h3>
     <div class="level"><div class="ring" style="--p:${pct}"><b>${pct}%</b></div>
     <div class="lt"><strong>${L.name}</strong><p>${L.text}</p></div></div>
   </div>
-
-  <div class="block shadow"><h3>Тень архетипа: когда сила закрыта</h3>
-    <p class="muted" style="margin-bottom:12px">Нераскрытый дар не исчезает. Он ищет выход — и часто разрушает. Отметьте, что из этого вам знакомо:</p>
+  <div class="block shadow"><h3>${u.shadowH}</h3>
+    <p class="muted" style="margin-bottom:12px">${u.shadowLead}</p>
     <ul>${a.shadow.map(s=>`<li>${s}</li>`).join('')}</ul>
   </div>
-
-  <div class="block"><h3>Практики на 7 дней для ${a.gen}</h3>
+  <div class="block"><h3>${u.practicesH(a.gen)}</h3>
     <div class="practice">${a.practices.map(p=>`<div><small>${p[0]}</small><b>${p[1]}</b>${p[2]}</div>`).join('')}</div>
   </div>
-
-  <p class="quote">Но практики — только начало. Чтобы дар раскрылся, нужно понять, откуда он и что он от вас хочет.</p>
-
-  <div class="block" style="border-color:rgba(209,180,120,.5)"><h3>Почему ${a.name} узнает себя в книге «Я ведьма»</h3>
-    <p>${a.book}</p>
-    <p>Это роман о судьбе, любви, мистике и силе, основанный на реальных событиях. Его выбирают те, кто чувствует, что в них есть больше, чем они привыкли показывать. Многие читательницы пишут, что книга «открыла» им то, о чём они догадывались годами.</p>
+  <p class="quote">${u.bridge}</p>
+  <div class="block" style="border-color:rgba(209,180,120,.5)"><h3>${u.bookH(a.name)}</h3>
+    <p>${a.book}</p><p>${u.bookP2}</p>
   </div>
-
   <div class="offer" id="offer"><div class="offer-in">
-    <img class="cover" src="${COVER}" alt="Обложка книги «Я ведьма. Жизнь до и после»" onerror="this.outerHTML='<div class=\\'cover cover-fallback\\'><b>Я ведьма</b><span>Виктория Байн</span></div>'">
+    <img class="cover" src="${COVER}" alt="${u.coverAlt}" onerror="this.outerHTML='<div class=\\'cover cover-fallback\\'><b>${u.coverFallback[0]}</b><span>${u.coverFallback[1]}</span></div>'">
     <div>
-      <span class="eyebrow">Только для прошедших тест</span>
-      <h2 style="margin-top:10px;font-size:clamp(30px,4.5vw,42px)">«Я ведьма. Жизнь до и после»</h2>
+      <span class="eyebrow">${u.offerEyebrow}</span>
+      <h2 style="margin-top:10px;font-size:clamp(30px,4.5vw,42px)">${u.bookTitle}</h2>
       <div class="price"><b>${PRICE} ₽</b><s>${OLD_PRICE} ₽</s><span class="tag">−${Math.round((1-PRICE/OLD_PRICE)*100)}%</span></div>
-      <ul>
-        <li>Электронная книга: ePub + PDF</li>
-        <li>Придёт сразу после оплаты — читать через 2 минуты</li>
-        <li>История, основанная на реальных событиях</li>
-        <li>Ключ к вашему архетипу: ${a.name}</li>
-      </ul>
-      <a class="btn pulse" href="${url}" onclick="track('offer_click')">Забрать книгу за ${PRICE} ₽</a>
-      <div class="alt"><a href="${SITE}/read/" onclick="track('free_chapters')">Сначала прочитать 3 главы бесплатно →</a></div>
+      <ul>${u.offerList(a.name).map(x=>`<li>${x}</li>`).join('')}</ul>
+      ${u.langNote?`<p class="note" style="margin:-10px 0 18px">${u.langNote}</p>`:''}
+      <a class="btn pulse" href="${url}" onclick="track('offer_click')">${u.offerBtn(PRICE)}</a>
+      <div class="alt"><a href="${SITE}/read/" onclick="track('free_chapters')">${u.freeLink}</a></div>
     </div>
   </div></div>
-  <p class="note" style="text-align:center">Бестселлер 2025 · Более 1400 покупок за последние 30 дней</p>
-
+  <p class="note" style="text-align:center">${u.social}</p>
   <div class="share">
-    <button class="btn ghost" id="shareBtn">Поделиться результатом</button>
-    <button class="btn ghost" id="againBtn">Пройти ещё раз</button>
+    <button class="btn ghost" id="shareBtn">${u.shareBtn}</button>
+    <button class="btn ghost" id="againBtn">${u.againBtn}</button>
   </div>`;
-  show('result'); track('result_'+k);
-  requestAnimationFrame(()=>setTimeout(()=>document.querySelectorAll('.bar i').forEach(i=>i.style.width=i.dataset.w+'%'),200));
+  $('#footer').innerHTML=`<p>${u.footerDisc}</p>
+    <p style="margin-top:10px"><a href="${SITE}/">${u.footerSite}</a> · <a href="${SITE}/legal/">${u.footerLegal}</a></p>
+    <p style="margin-top:10px">${u.footerCopy}</p>`;
+  if(!silent){ show('result'); track('result_'+k); }
+  requestAnimationFrame(()=>setTimeout(()=>document.querySelectorAll('.bar i').forEach(i=>i.style.width=i.dataset.w+'%'),silent?0:200));
   $('#againBtn').onclick=()=>{step=0;answers.length=0;show('quiz');renderQ();};
   $('#shareBtn').onclick=async()=>{
-    const text=`Мой архетип силы — ${a.name} (${a.short}). А какая сила скрыта в тебе?`;
-    const link=location.href.split('#')[0];
-    try{ if(navigator.share){await navigator.share({title:'Тест: какая сила в тебе скрыта',text,url:link});}
-         else {await navigator.clipboard.writeText(text+' '+link);$('#shareBtn').textContent='Ссылка скопирована ✓';} }catch(e){}
+    const text=u.shareText(a.name,a.short);
+    const link=location.origin+location.pathname+'?lang='+lang;
+    try{ if(navigator.share){await navigator.share({title:u.shareTitle,text,url:link});}
+         else {await navigator.clipboard.writeText(text+' '+link);$('#shareBtn').textContent=u.copied;} }catch(e){}
   };
-  // липкая кнопка на мобильном — после блока «Тень», прячется на самом оффере
   const sticky=$('#sticky'), sh=document.querySelector('.block.shadow'), of=$('#offer');
-  const onScroll=()=>{const y=sh.getBoundingClientRect().top, o=of.getBoundingClientRect();
+  window.onscroll=()=>{ if(current!=='result') return; const y=sh.getBoundingClientRect().top, o=of.getBoundingClientRect();
     sticky.classList.toggle('show', y<innerHeight*.5 && !(o.top<innerHeight && o.bottom>0));};
-  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  window.onscroll();
 }
+
+setLang(lang,false);
 </script>
 </body>
 </html>
