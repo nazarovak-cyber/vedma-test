@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Какая скрытая сила живёт в вас? — тест по книге «Я ведьма»</title>
+<meta name="description" content="Бесплатный тест из 10 вопросов: узнайте свой архетип силы — Видящая, Сновидица, Целительница, Царица или Хранительница памяти — и получите личный расклад с практиками.">
+<meta name="theme-color" content="#170f14">
+<meta property="og:title" content="Какая скрытая сила живёт в вас?">
+<meta property="og:description" content="Тест по мотивам книги Виктории Байн «Я ведьма». Ваш архетип, тень и практики на 7 дней.">
+<meta property="og:image" content="https://victoria-bain-book.nazarova-k.chatgpt.site/assets/edition-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#170f14; --dark:#21131b; --wine:#542438; --wine2:#7a3350;
+  --gold:#d1b478; --gold2:#ecd9a8; --paper:#f8f5ee; --cream:#eee7dc;
+  --muted:#b8a8ae; --line:rgba(209,180,120,.25);
+  --serif:Cormorant,Georgia,"Times New Roman",serif; --sans:Manrope,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--cream);background:var(--night);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;
+  background:radial-gradient(1200px 700px at 80% -10%,rgba(122,51,80,.55),transparent 60%),
+             radial-gradient(900px 600px at -10% 40%,rgba(84,36,56,.6),transparent 60%),
+             radial-gradient(800px 500px at 50% 110%,rgba(209,180,120,.12),transparent 60%),var(--night)}
+.stars{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--gold2);opacity:.0;animation:tw 5s infinite ease-in-out}
+@keyframes tw{0%,100%{opacity:0}50%{opacity:.8}}
+a{color:inherit}
+.wrap{width:min(1080px,calc(100% - 40px));margin:0 auto}
+.narrow{width:min(720px,calc(100% - 40px));margin:0 auto}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;color:var(--paper)}
+h1{font-size:clamp(40px,8vw,76px);letter-spacing:-.01em}
+h2{font-size:clamp(32px,5.5vw,52px)}
+h3{font-size:clamp(24px,3.5vw,30px)}
+em,.gold{color:var(--gold);font-style:italic}
+.eyebrow{display:inline-flex;gap:10px;align-items:center;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"✦"}
+.lead{font-size:clamp(17px,2.2vw,20px);color:var(--cream);opacity:.92}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;text-decoration:none;font-family:var(--sans);font-weight:700;font-size:17px;letter-spacing:.02em;
+  padding:20px 34px;border-radius:999px;color:#2a1720;background:linear-gradient(135deg,var(--gold2),var(--gold) 55%,#b8955a);
+  box-shadow:0 10px 40px rgba(209,180,120,.35),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 50px rgba(209,180,120,.5)}
+.btn.pulse{animation:pulse 2.6s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 10px 40px rgba(209,180,120,.35),0 0 0 0 rgba(209,180,120,.45)}50%{box-shadow:0 10px 40px rgba(209,180,120,.35),0 0 0 14px rgba(209,180,120,0)}}
+.btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--line);box-shadow:none}
+.note{font-size:13px;color:var(--muted)}
+section{padding:72px 0}
+.screen{display:none}
+.screen.active{display:block;animation:fade .6s ease}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* top */
+.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-family:var(--serif);font-size:22px;letter-spacing:.08em;text-decoration:none;color:var(--paper)}
+.logo small{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
+
+/* hero */
+.hero{padding:30px 0 60px;text-align:center}
+.hero h1{margin:22px auto 22px;max-width:14ch}
+.hero .lead{max-width:600px;margin:0 auto 34px}
+.hero .meta{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-top:18px}
+.hero .meta span{font-size:14px;color:var(--muted)}
+.hero .meta span::before{content:"☾ ";color:var(--gold)}
+.orb{width:min(300px,70vw);aspect-ratio:1;margin:0 auto 10px;position:relative}
+.orb svg{width:100%;height:100%;animation:spin 60s linear infinite}
+.orb .eye{position:absolute;inset:0;display:grid;place-items:center;font-size:54px;color:var(--gold);animation:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* signs */
+.signs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:34px}
+.sign{padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(33,19,27,.55);backdrop-filter:blur(4px)}
+.sign b{display:block;font-family:var(--serif);font-size:22px;color:var(--paper);margin-bottom:6px;font-weight:600}
+.sign .ico{font-size:22px;color:var(--gold)}
+
+/* shadow block */
+.warn{border:1px solid rgba(209,180,120,.35);border-radius:26px;padding:clamp(28px,5vw,52px);
+  background:linear-gradient(160deg,rgba(84,36,56,.55),rgba(23,15,20,.8))}
+.warn ul{list-style:none;margin:22px 0 0;display:grid;gap:12px}
+.warn li{padding-left:30px;position:relative}
+.warn li::before{content:"✕";position:absolute;left:0;color:var(--gold);font-size:14px;top:3px}
+
+/* archetype preview */
+.arch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:34px}
+.arch{border:1px solid var(--line);border-radius:18px;padding:24px 18px;text-align:center;background:rgba(33,19,27,.5);transition:transform .25s,border-color .25s}
+.arch:hover{transform:translateY(-4px);border-color:var(--gold)}
+.arch svg{width:54px;height:54px;margin-bottom:10px}
+.arch b{display:block;font-family:var(--serif);font-size:22px;color:var(--paper);font-weight:600}
+.arch span{font-size:14px;color:var(--muted)}
+
+/* what you get */
+.get{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:30px;counter-reset:g}
+.get div{counter-increment:g;padding-top:14px;border-top:1px solid var(--line)}
+.get div::before{content:"0" counter(g);font-family:var(--serif);font-size:34px;color:var(--gold);display:block}
+.cta-final{text-align:center;padding:80px 0 50px}
+
+/* quiz */
+#quiz{min-height:100vh;min-height:100dvh;padding-bottom:40px}
+.qbar{display:flex;justify-content:space-between;align-items:center;padding:22px 0 10px;font-size:14px;color:var(--muted)}
+.qback{background:none;border:0;color:var(--gold);font:inherit;cursor:pointer;padding:6px 0}
+.qback[disabled]{opacity:.3;cursor:default}
+.progress{height:4px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--wine2),var(--gold));transition:width .5s ease}
+.qcard{margin-top:clamp(30px,6vh,60px)}
+.qnum{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:20px}
+.qtext{font-size:clamp(28px,5vw,42px);margin:8px 0 28px}
+.opts{display:grid;gap:12px}
+.opt{display:flex;gap:14px;align-items:flex-start;text-align:left;width:100%;padding:18px 20px;border-radius:16px;cursor:pointer;
+  border:1px solid var(--line);background:rgba(33,19,27,.6);color:var(--cream);font:inherit;font-size:16px;line-height:1.45;transition:all .2s}
+.opt:hover{border-color:var(--gold);background:rgba(84,36,56,.5)}
+.opt.sel{border-color:var(--gold);background:rgba(209,180,120,.16)}
+.opt .dot{flex:0 0 22px;height:22px;border-radius:50%;border:1px solid var(--gold);margin-top:1px;display:grid;place-items:center}
+.opt.sel .dot::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--gold)}
+.qanim{animation:fade .45s ease}
+
+/* loading */
+#loading{min-height:100vh;min-height:100dvh;display:none;place-items:center;text-align:center}
+#loading.active{display:grid}
+.cards-fan{position:relative;width:200px;height:200px;margin:0 auto 30px}
+.cards-fan span{position:absolute;left:70px;top:20px;width:64px;height:110px;border-radius:8px;border:1px solid var(--gold);
+  background:linear-gradient(160deg,var(--wine),var(--dark));transform-origin:50% 140%;animation:fan 2.4s ease-in-out infinite}
+.cards-fan span::after{content:"✦";position:absolute;inset:0;display:grid;place-items:center;color:var(--gold)}
+.cards-fan span:nth-child(1){--r:-30deg}.cards-fan span:nth-child(2){--r:-10deg}.cards-fan span:nth-child(3){--r:10deg}.cards-fan span:nth-child(4){--r:30deg}
+@keyframes fan{0%,100%{transform:rotate(0)}50%{transform:rotate(var(--r))}}
+#loadText{font-family:var(--serif);font-size:26px;font-style:italic;color:var(--paper);min-height:1.4em}
+
+/* result */
+.res-head{text-align:center;padding:30px 0 10px}
+.tarot{width:min(300px,78vw);margin:30px auto;aspect-ratio:3/5;border-radius:20px;padding:12px;
+  background:linear-gradient(160deg,var(--gold2),var(--gold) 40%,#8e6e3a);box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(209,180,120,.25);
+  animation:reveal 1.1s cubic-bezier(.2,.8,.2,1)}
+@keyframes reveal{from{transform:rotateY(90deg) scale(.9);opacity:0}to{transform:none;opacity:1}}
+.tarot-in{height:100%;border-radius:12px;background:radial-gradient(circle at 50% 35%,var(--wine2),var(--dark) 70%);
+  border:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:22px 14px;text-align:center}
+.tarot-in .roman{font-family:var(--serif);color:var(--gold);letter-spacing:.3em;font-size:16px}
+.tarot-in svg{width:58%;height:auto}
+.tarot-in .tname{font-family:var(--serif);font-size:30px;color:var(--paper);line-height:1}
+.tarot-in .tsub{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
+.block{margin:26px 0;padding:clamp(24px,4vw,40px);border-radius:24px;border:1px solid var(--line);background:rgba(33,19,27,.6)}
+.block h3{margin-bottom:14px}
+.block p+p{margin-top:12px}
+.block ul{list-style:none;display:grid;gap:10px;margin-top:6px}
+.block li{padding-left:26px;position:relative}
+.block li::before{content:"✦";position:absolute;left:0;color:var(--gold);font-size:13px;top:3px}
+.block.shadow{background:linear-gradient(160deg,rgba(23,15,20,.9),rgba(84,36,56,.45))}
+.block.shadow li::before{content:"✕"}
+.bars{display:grid;gap:14px;margin-top:10px}
+.bar-row{display:grid;grid-template-columns:150px 1fr 44px;gap:12px;align-items:center;font-size:15px}
+.bar{height:10px;border-radius:10px;background:rgba(255,255,255,.07);overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:10px;background:linear-gradient(90deg,var(--wine2),var(--gold));transition:width 1.4s ease}
+.bar-row.lead-row{color:var(--paper);font-weight:700}
+.level{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.ring{--p:50;width:120px;height:120px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;
+  background:conic-gradient(var(--gold) calc(var(--p)*1%),rgba(255,255,255,.08) 0)}
+.ring b{width:96px;height:96px;border-radius:50%;background:var(--dark);display:grid;place-items:center;font-family:var(--serif);font-size:34px;color:var(--paper)}
+.level .lt{flex:1;min-width:220px}
+.level .lt strong{font-family:var(--serif);font-size:26px;color:var(--gold);font-weight:600;display:block;line-height:1.1;margin-bottom:6px}
+.practice{display:grid;gap:14px;margin-top:8px}
+.practice div{padding:18px;border-radius:16px;background:rgba(84,36,56,.35);border:1px solid rgba(209,180,120,.15)}
+.practice b{display:block;color:var(--paper);margin-bottom:4px}
+.practice small{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:11px}
+
+/* offer */
+.offer{margin:46px 0 20px;border-radius:28px;padding:3px;background:linear-gradient(135deg,var(--gold2),var(--wine2) 50%,var(--gold))}
+.offer-in{border-radius:25px;background:linear-gradient(170deg,#2b1823,var(--night));padding:clamp(26px,5vw,48px);display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:clamp(20px,4vw,40px);align-items:center}
+.cover{width:100%;aspect-ratio:2/3;border-radius:6px 12px 12px 6px;object-fit:cover;box-shadow:-8px 18px 50px rgba(0,0,0,.7);transform:rotate(-3deg);background:linear-gradient(160deg,var(--wine),var(--dark))}
+.cover-fallback{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:16px;border:1px solid var(--gold)}
+.cover-fallback b{font-family:var(--serif);font-size:30px;color:var(--paper);line-height:1}
+.cover-fallback span{font-size:11px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-top:8px}
+.price{display:flex;align-items:baseline;gap:16px;margin:18px 0 6px;flex-wrap:wrap}
+.price b{font-family:var(--serif);font-size:60px;color:var(--gold2);line-height:1}
+.price s{font-size:22px;color:var(--muted)}
+.price .tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--wine2);color:var(--paper);padding:6px 10px;border-radius:999px}
+.offer ul{list-style:none;display:grid;gap:8px;margin:16px 0 24px}
+.offer li::before{content:"✓  ";color:var(--gold);font-weight:700}
+.offer .btn{width:100%}
+.offer .alt{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:14px}
+.offer .alt a{color:var(--gold)}
+.quote{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3vw,28px);color:var(--paper);text-align:center;max-width:620px;margin:40px auto}
+.share{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:30px 0}
+footer{padding:40px 0 60px;text-align:center;font-size:13px;color:var(--muted);border-top:1px solid var(--line);margin-top:40px}
+footer a{color:var(--gold)}
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(0deg,rgba(23,15,20,.98),rgba(23,15,20,.85));
+  border-top:1px solid var(--line);display:none;z-index:20;transform:translateY(110%);transition:transform .35s}
+.sticky.show{transform:none}
+.sticky .btn{width:100%;padding:16px;font-size:16px}
+@media (max-width:640px){
+  section{padding:54px 0}
+  .offer-in{grid-template-columns:1fr;text-align:center}
+  .cover{width:62%;margin:0 auto}
+  .price{justify-content:center}
+  .offer ul{text-align:left}
+  .bar-row{grid-template-columns:118px 1fr 38px;font-size:14px}
+  .sticky{display:block}
+  .hero .btn{width:100%}
+}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+
+<!-- ============ 1. ЛЕНДИНГ ============ -->
+<div id="landing" class="screen active">
+  <div class="wrap top">
+    <a class="logo" href="https://victoria-bain-book.nazarova-k.chatgpt.site/">VICTORIA BAIN<small>истории за гранью привычного</small></a>
+    <a class="note" href="#start" style="color:var(--gold);text-decoration:none">Тест ✦</a>
+  </div>
+
+  <header class="hero wrap" id="start">
+    <div class="orb" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none" stroke="#d1b478" stroke-width=".7">
+        <circle cx="100" cy="100" r="96" opacity=".5"/><circle cx="100" cy="100" r="80" stroke-dasharray="2 5"/>
+        <circle cx="100" cy="100" r="60" opacity=".6"/>
+        <path d="M100 4 L100 196 M4 100 L196 100 M32 32 L168 168 M168 32 L32 168" opacity=".25"/>
+        <polygon points="100,22 168,140 32,140" opacity=".5"/><polygon points="100,178 32,60 168,60" opacity=".5"/>
+        <g fill="#d1b478" stroke="none"><circle cx="100" cy="4" r="2.5"/><circle cx="196" cy="100" r="2.5"/><circle cx="100" cy="196" r="2.5"/><circle cx="4" cy="100" r="2.5"/></g>
+      </svg>
+      <div class="eye">☾</div>
+    </div>
+    <span class="eyebrow">Бесплатный тест · 10 вопросов · 2 минуты</span>
+    <h1>Какая <em>скрытая сила</em> живёт в вас?</h1>
+    <p class="lead">Сны, которые сбываются. Предчувствия. Ощущение, что вы чувствуете людей насквозь. Это не случайность — это ваш дар. Узнайте, какой он, и получите личный расклад: ваш архетип, его тень и практики, чтобы раскрыть силу.</p>
+    <button class="btn pulse" data-start>Пройти тест ✦</button>
+    <div class="meta"><span>без регистрации</span><span>результат сразу</span><span>по мотивам книги «Я ведьма»</span></div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Узнаёте себя?</span>
+      <h2 style="margin-top:14px">Если с вами случалось хотя бы одно из этого — <em>тест для вас</em></h2>
+      <div class="signs">
+        <div class="sign"><span class="ico">☾</span><b>Сны сбываются</b>Снится то, что потом происходит наяву. Или сны настолько яркие, что утром трудно понять, где была реальность.</div>
+        <div class="sign"><span class="ico">◉</span><b>Вы «просто знаете»</b>Кто сейчас позвонит, что человек врёт, чем закончится дело. Объяснить не можете — но оказываетесь правы.</div>
+        <div class="sign"><span class="ico">♡</span><b>Чужая боль — как своя</b>Рядом с одними людьми вы оживаете, после других — опустошены, будто из вас забрали силы.</div>
+        <div class="sign"><span class="ico">✧</span><b>Слова сбываются</b>Скажете в сердцах — и случается. Вы давно заметили, что с желаниями надо быть осторожнее.</div>
+        <div class="sign"><span class="ico">∞</span><b>«Я здесь уже была»</b>Дежавю, тяга к другим эпохам и местам, воспоминания, которых не может быть.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="narrow warn">
+      <span class="eyebrow">Почему это важно</span>
+      <h2 style="margin-top:14px">У каждого есть скрытые способности. Но сила, которую <em>не раскрывают</em>, начинает разрушать</h2>
+      <p class="lead" style="margin-top:18px">Приходит время, когда дар просится наружу. Если его не замечать, энергия не исчезает — она поворачивается против вас:</p>
+      <ul>
+        <li>постоянная усталость без причины и ощущение, что живёте не свою жизнь</li>
+        <li>повторяющиеся сценарии в отношениях и с деньгами — «как будто по кругу»</li>
+        <li>тревога, бессонница, тяжёлые сны</li>
+        <li>вы чувствуете больше других, но не знаете, что с этим делать — и стыдитесь этого</li>
+      </ul>
+      <p style="margin-top:22px">Тест покажет, какая именно сила в вас ведущая, насколько она раскрыта и с чего начать.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">5 архетипов силы</span>
+      <h2 style="margin-top:14px">Кто вы из пяти?</h2>
+      <div class="arch-grid" id="archPreview"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Ваш личный расклад</span>
+      <h2 style="margin-top:14px">Что вы получите в конце</h2>
+      <div class="get">
+        <div><b>Ваш архетип</b><p class="muted">Ведущая сила и вторая — та, что её усиливает.</p></div>
+        <div><b>Уровень раскрытия</b><p class="muted">Спит ваш дар, просыпается или уже работает.</p></div>
+        <div><b>Тень архетипа</b><p class="muted">Что происходит, когда силу держат взаперти.</p></div>
+        <div><b>Практики на 7 дней</b><p class="muted">Три простых шага именно для вашего типа.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-final narrow">
+    <p class="quote">«Я пишу о том, что реальность глубже, чем кажется».<br><span class="note" style="font-style:normal;font-family:var(--sans)">— Виктория Байн, автор книги «Я ведьма»</span></p>
+    <button class="btn pulse" data-start>Узнать свою силу ✦</button>
+    <p class="note" style="margin-top:16px">Литературный тест для самонаблюдения по мотивам романа «Я ведьма». Не является психологической диагностикой.</p>
+  </div>
+</div>
+
+<!-- ============ 2. ТЕСТ ============ -->
+<div id="quiz" class="screen">
+  <div class="narrow">
+    <div class="qbar"><button class="qback" id="qBack">← Назад</button><span id="qCount">1 / 10</span></div>
+    <div class="progress"><i id="qProg"></i></div>
+    <div class="qcard" id="qCard"></div>
+  </div>
+</div>
+
+<!-- ============ 3. ЗАГРУЗКА ============ -->
+<div id="loading" class="screen">
+  <div>
+    <div class="cards-fan"><span></span><span></span><span></span><span></span></div>
+    <p id="loadText">Раскладываем ваши ответы…</p>
+  </div>
+</div>
+
+<!-- ============ 4. РЕЗУЛЬТАТ ============ -->
+<div id="result" class="screen">
+  <div class="narrow" id="resBody"></div>
+  <footer class="narrow">
+    <p>Литературный тест для самонаблюдения по мотивам романа Виктории Байн «Я ведьма». Не является психологической или медицинской диагностикой.</p>
+    <p style="margin-top:10px"><a href="https://victoria-bain-book.nazarova-k.chatgpt.site/">Сайт автора</a> · <a href="https://victoria-bain-book.nazarova-k.chatgpt.site/legal/">Оферта и конфиденциальность</a></p>
+    <p style="margin-top:10px">© 2026 Виктория Байн</p>
+  </footer>
+</div>
+
+<div class="sticky" id="sticky"><a class="btn" id="stickyBtn" href="#">Книга «Я ведьма» за 290 ₽</a></div>
+
+<script>
+/* ================= НАСТРОЙКИ ================= */
+const SITE = "https://victoria-bain-book.nazarova-k.chatgpt.site";
+const PRICE = 290, OLD_PRICE = 500;
+// Ссылка на оплату. archetype подставляется автоматически — видно, какой тип чаще покупает.
+const checkoutUrl = a => `${SITE}/checkout/?book=witch&format=pdf&source=quiz290&archetype=${a}`;
+const COVER = `${SITE}/assets/edition-cover.webp`;
+const YM_ID = null; // номер счётчика Яндекс.Метрики, если нужен: например 12345678
+
+function track(goal){ try{ if(YM_ID && window.ym) ym(YM_ID,'reachGoal',goal); if(window.gtag) gtag('event',goal); }catch(e){} }
+
+/* ================= АРХЕТИПЫ ================= */
+const ICONS = {
+ seer:`<svg viewBox="0 0 100 100" fill="none" stroke="#d1b478" stroke-width="2.2"><path d="M8 50 Q50 12 92 50 Q50 88 8 50Z"/><circle cx="50" cy="50" r="15"/><circle cx="50" cy="50" r="5" fill="#d1b478"/><path d="M50 8v10M50 82v10M20 22l6 7M80 22l-6 7M20 78l6-7M80 78l-6-7" opacity=".6"/></svg>`,
+ dreamer:`<svg viewBox="0 0 100 100" fill="none" stroke="#d1b478" stroke-width="2.2"><path d="M62 14 A38 38 0 1 0 86 64 A30 30 0 1 1 62 14Z"/><path d="M70 30l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#d1b478"/><circle cx="82" cy="20" r="2" fill="#d1b478"/><circle cx="30" cy="84" r="1.6" fill="#d1b478"/></svg>`,
+ healer:`<svg viewBox="0 0 100 100" fill="none" stroke="#d1b478" stroke-width="2.2"><path d="M50 84 C20 64 12 46 16 32 C20 18 40 14 50 30 C60 14 80 18 84 32 C88 46 80 64 50 84Z"/><path d="M50 40v26M37 53h26"/><circle cx="50" cy="53" r="22" opacity=".35" stroke-dasharray="2 4"/></svg>`,
+ queen:`<svg viewBox="0 0 100 100" fill="none" stroke="#d1b478" stroke-width="2.2"><path d="M16 70 L12 30 L32 48 L50 20 L68 48 L88 30 L84 70Z"/><path d="M16 80h68"/><circle cx="50" cy="20" r="4" fill="#d1b478"/><circle cx="12" cy="30" r="3" fill="#d1b478"/><circle cx="88" cy="30" r="3" fill="#d1b478"/><path d="M40 62 Q50 50 60 62 Q50 72 40 62Z" fill="#d1b478" opacity=".7"/></svg>`,
+ keeper:`<svg viewBox="0 0 100 100" fill="none" stroke="#d1b478" stroke-width="2.2"><circle cx="50" cy="50" r="38"/><path d="M50 12 C30 30 30 70 50 88 C70 70 70 30 50 12Z"/><path d="M12 50h76" opacity=".6"/><path d="M50 50 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0" opacity=".4" stroke-dasharray="3 4"/><circle cx="50" cy="50" r="4" fill="#d1b478"/></svg>`
+};
+
+const A = {
+ seer:{ gen:"Видящей", name:"Видящая", roman:"I", sub:"дар ясновидения", short:"интуиция и предчувствия",
+  essence:"Ваша сила — знание без объяснений. Вы видите суть людей и событий раньше, чем она становится очевидной. Информация приходит к вам вспышками: образом, ощущением в теле, внезапной уверенностью. Вы часто правы, но редко можете доказать, откуда знаете.",
+  shows:["вы знаете, кто звонит, ещё до того, как посмотрели на экран","чувствуете ложь — даже когда человек улыбается","перед важными событиями появляется тревога или, наоборот, тихая уверенность","к вам приходят за советом, и ваши слова потом сбываются"],
+  shadow:["вы видите больше, чем хотите, и устаёте от «лишнего знания»","глушите интуицию логикой — и потом жалеете: «я же чувствовала»","тревога и навязчивые мысли о плохом, бессонница","ощущение, что вас никто не понимает"],
+  practices:[["Утро","Три образа","Сразу после пробуждения, не беря телефон, закройте глаза и запишите три первых образа или слова. Вечером сверьте их с прожитым днём."],
+             ["День","Первое ощущение","Перед любым решением на 10 секунд прислушайтесь к телу: где сжимается, где становится тепло. Записывайте и проверяйте, насколько это совпало."],
+             ["Вечер","Тишина 5 минут","Пять минут без звуков и экранов. Интуиция говорит тихо — её заглушает шум."]],
+  book:"Диана, героиня книги, однажды начинает видеть то, что не укладывается в логику. Сначала она пугается и пытается это «выключить» — так же, как многие Видящие. Её путь покажет вам, что бывает, когда перестаёшь сопротивляться своему знанию."},
+ dreamer:{ gen:"Сновидицы", name:"Сновидица", roman:"II", sub:"дар снов", short:"вещие и осознанные сны",
+  essence:"Ваша сила открывается ночью. Сны для вас — не шум, а второй мир, где вы получаете подсказки, ответы и предупреждения. Многие Сновидицы умеют понимать, что спят, и менять ход сна. Подсознание говорит с вами образами — и говорит много.",
+  shows:["яркие, сюжетные сны, которые помнятся годами","сны, которые потом сбываются — полностью или в деталях","моменты осознанности: «я понимаю, что сплю»","решения, с которыми вы просыпаетесь утром"],
+  shadow:["тяжёлые, тревожные сны и разбитость по утрам","уход в фантазии, когда реальность кажется пресной","вас называют «не от мира сего», и вы начинаете стыдиться своей глубины","бессонница — сила, которой не дают выхода, мешает уснуть"],
+  practices:[["Утро","Дневник снов","Положите тетрадь у кровати. Записывайте сон сразу, даже обрывки. Через неделю вы заметите повторяющиеся символы."],
+             ["День","Проверка реальности","Несколько раз в день спрашивайте себя: «Я сплю?» — и смотрите на свои ладони. Эта привычка перейдёт в сон и подарит осознанность."],
+             ["Вечер","Вопрос сну","Перед сном сформулируйте один вопрос и повторите его про себя, засыпая. Утром запишите всё, что приснилось."]],
+  book:"Воспоминания приходят к Диане как слишком ясные, слишком живые картины — на грани сна и яви. В книге «Я ведьма» вы увидите, как образы, которые кажутся фантазией, оказываются памятью и подсказкой."},
+ healer:{ gen:"Целительницы", name:"Целительница", roman:"III", sub:"дар исцеления", short:"эмпатия и энергия рук",
+  essence:"Ваша сила — чувствовать и восстанавливать. Вы ощущаете чужое состояние телом, рядом с вами людям становится легче, а ваши руки часто «знают», где болит. Это древний дар знахарок: исцелять словом, прикосновением, присутствием.",
+  shows:["люди тянутся к вам выговориться, даже незнакомые","вы физически чувствуете чужую боль или тревогу","после ваших объятий или слов человеку правда легче","растения, животные и дети рядом с вами спокойнее"],
+  shadow:["вы спасаете всех, кроме себя, и выгораете","после общения с некоторыми людьми — опустошение и болезни","вы не умеете отказывать и живёте чужими проблемами","обида, что ваша забота никому не нужна"],
+  practices:[["Утро","Ладони","Потрите ладони 30 секунд, разведите на 5 см и почувствуйте тепло или покалывание между ними. Это ваш инструмент — учитесь его ощущать."],
+             ["День","Чьё это?","Когда внезапно накатывает тяжесть, спросите себя: «Это моё или чужое?» Одного вопроса часто достаточно, чтобы отпустить."],
+             ["Вечер","Вода","Под душем представьте, как вода смывает с вас всё чужое за день. Целительнице очищение нужно каждый день."]],
+  book:"В основе книги «Я ведьма» — история чудесного исцеления Дианы, и, по словам автора, она не вымышлена. Для Целительницы это книга о том, откуда берётся сила восстанавливать — себя и других."},
+ queen:{ gen:"Царицы", name:"Царица", roman:"IV", sub:"сила слова и намерения", short:"воля и сила слова",
+  essence:"Ваша сила — творить реальность намерением. Когда вы чего-то по-настоящему хотите, мир подстраивается. Ваши слова имеют вес — и в хорошем, и в плохом. Вы рождены вести за собой, принимать решения и строить, как строили древние царицы свои города.",
+  shows:["сказанное в сердцах сбывается — иногда пугающе точно","вам легко увлечь людей идеей","в кризисе вы собираетесь и берёте всё на себя","желания исполняются, когда вы перестаёте сомневаться"],
+  shadow:["контроль всего и всех — и огромная усталость от этого","гнев, который разрушает отношения","«всё сама» — и одиночество на вершине","когда сила подавлена: апатия, будто внутренний огонь погас"],
+  practices:[["Утро","Одно намерение","Сформулируйте вслух одно намерение на день — в настоящем времени, как уже свершившееся. Вечером отметьте, что сбылось."],
+             ["День","Чистое слово","Целый день не говорите о себе и других плохо — даже в шутку. Для Царицы слово — не просто звук."],
+             ["Вечер","Огонь","Зажгите свечу и 5 минут смотрите на пламя, отпуская то, что не удалось контролировать."]],
+  book:"Диана однажды понимает, что когда-то была Дидоной — царицей Карфагена. Царица в книге «Я ведьма» узнает свою природу: власть, жертвы и цену решений, которые меняют судьбы."},
+ keeper:{ gen:"Хранительницы памяти", name:"Хранительница памяти", roman:"V", sub:"память рода и прошлых жизней", short:"память прошлых жизней",
+  essence:"Ваша сила — память, которая глубже одной жизни. Вас тянет к определённым эпохам, местам, культурам — будто вы оттуда родом. В вас говорят предки и, возможно, ваши прошлые воплощения. Вы связующее звено: через вас род может исцелиться.",
+  shows:["сильные дежавю и «воспоминания», которых не может быть","необъяснимая тяга к древним городам, языкам, истории","повторяющиеся в роду судьбы, которые вы замечаете раньше других","бабушки, предки, умершие близкие приходят во снах"],
+  shadow:["вы проживаете не свою судьбу, повторяя сценарии рода","тоска по чему-то, чего вы не можете назвать","ощущение «я не на своём месте» и «не в своём времени»","страхи без причины — как будто чужие"],
+  practices:[["Утро","Имена рода","Запишите имена всех женщин рода, которые помните: мама, бабушки, прабабушки. Рядом — одно качество каждой, которое есть и в вас."],
+             ["День","Отклик места","Отмечайте, какие места, вещи, мелодии вызывают необъяснимое чувство «родного». Это нити вашей памяти."],
+             ["Вечер","Благодарность","Перед сном мысленно поблагодарите своих предков. Простой ритуал, который снимает тяжесть, принесённую «не от себя»."]],
+  book:"«Я ведьма» — книга именно о вас. Диана, современная женщина, вспоминает свою прошлую жизнь — Дидону, царицу Карфагена. Вы узнаете в этой истории то, что сами чувствуете, но не решаетесь назвать."}
+};
+const ORDER = ["seer","dreamer","healer","queen","keeper"];
+
+/* ================= ВОПРОСЫ ================= */
+const Q = [
+ {q:"Вы входите в незнакомую комнату, полную людей. Что вы замечаете первым?", o:[
+  ["Общее настроение — чувства людей будто переходят ко мне",{healer:2}],
+  ["Вдруг ощущение: «я здесь уже была»",{keeper:2}],
+  ["Сразу понимаю, кто здесь главный и чем всё закончится",{seer:2}],
+  ["Хочется что-то изменить: свет, порядок, ход разговора",{queen:2}],
+  ["Детали, похожие на что-то из моего сна",{dreamer:2}]]},
+ {q:"Какие сны снятся вам чаще всего?", o:[
+  ["Яркие, как кино. Иногда понимаю, что сплю",{dreamer:2}],
+  ["О других эпохах и местах, где я никогда не была",{keeper:2}],
+  ["Те, что потом сбываются",{seer:2,dreamer:1}],
+  ["О близких: я помогаю, спасаю, лечу",{healer:2}],
+  ["Почти не помню, но утром просыпаюсь с готовым решением",{queen:2}]]},
+ {q:"Когда нужно принять важное решение, вы опираетесь на…", o:[
+  ["Внутреннее «знаю», которое не могу объяснить",{seer:2}],
+  ["Знаки и подсказки, которые приходят во сне",{dreamer:2}],
+  ["То, как это отзовётся в людях, которые мне дороги",{healer:2}],
+  ["Свою волю: решила — значит, так и будет",{queen:2}],
+  ["Опыт рода: как поступили бы мама, бабушка",{keeper:2}]]},
+ {q:"Что вам чаще всего говорят люди?", o:[
+  ["«Рядом с тобой становится легче»",{healer:2}],
+  ["«Откуда ты это знала?»",{seer:2}],
+  ["«Ты будто не из этого времени»",{keeper:2}],
+  ["«Ты витаешь в облаках»",{dreamer:2}],
+  ["«С тобой лучше не спорить»",{queen:2}]]},
+ {q:"Что из этого случалось с вами?", o:[
+  ["Говорю что-то в сердцах — и это сбывается",{queen:2}],
+  ["Сильное дежавю или «воспоминания», которых не может быть",{keeper:2}],
+  ["Предчувствие, которое оправдалось",{seer:2}],
+  ["Чужая боль или тревога ощущалась в моём теле",{healer:2}],
+  ["Во сне я поняла, что сплю, и смогла управлять сном",{dreamer:2}]]},
+ {q:"Какая стихия отзывается в вас сильнее всего?", o:[
+  ["Огонь — страсть, воля, движение",{queen:2}],
+  ["Вода — чувства, очищение, течение",{healer:2}],
+  ["Воздух — ясность, мысли, знаки",{seer:2}],
+  ["Земля — корни, род, древние камни",{keeper:2}],
+  ["Ночь и лунный свет",{dreamer:2}]]},
+ {q:"Какой образ вам ближе всего?", o:[
+  ["Царица на троне древнего города у моря",{queen:2,keeper:1}],
+  ["Знахарка с травами у огня",{healer:2}],
+  ["Жрица у оракула, видящая будущее",{seer:2}],
+  ["Женщина, которая во сне путешествует по мирам",{dreamer:2}],
+  ["Старинная книга с именами всех женщин рода",{keeper:2}]]},
+ {q:"Чего вы боитесь больше всего — если честно?", o:[
+  ["Потерять контроль над своей жизнью",{queen:2}],
+  ["Не суметь помочь близким",{healer:2}],
+  ["Узнать то, чего не хочу знать",{seer:2}],
+  ["Что реальность окажется скучнее моих снов",{dreamer:2}],
+  ["Повторить чью-то несчастливую судьбу",{keeper:2}]]},
+ {q:"Как вы чувствуете себя последние месяцы?", lvl:true, o:[
+  ["Много сил, всё складывается, я в потоке",3],
+  ["По-разному: сила то приходит, то уходит",2],
+  ["Устаю без причины, будто живу не свою жизнь",1],
+  ["Всё рушится: отношения, деньги, здоровье — и я не понимаю почему",0]]},
+ {q:"Как вы относитесь к своим «странностям» — снам, предчувствиям, ощущениям?", lvl:true, o:[
+  ["Доверяю им и пользуюсь",3],
+  ["Замечаю, но не понимаю, что с этим делать",2],
+  ["Стараюсь не обращать внимания: «это всё фантазии»",1],
+  ["Боюсь их и скрываю от других",0]]}
+];
+
+const LEVELS = [
+ {min:0,max:1,name:"Спящая сила",pct:[18,32],text:"Ваш дар сейчас закрыт — и, судя по ответам, он уже даёт о себе знать через усталость, тревогу или ощущение, что жизнь идёт «не туда». Это не приговор, а сигнал: сила просится наружу. Начните с практик ниже — хотя бы с одной."},
+ {min:2,max:3,name:"Пробуждение",pct:[44,58],text:"Сила просыпается: вы её замечаете, но пока не доверяете ей до конца. Это самый важный и самый хрупкий этап. Если сейчас отмахнуться — дар снова уснёт. Если поддержать — раскроется очень быстро."},
+ {min:4,max:5,name:"На пороге",pct:[68,82],text:"Вы уже чувствуете свой дар и иногда пользуетесь им. Осталось перестать сомневаться и сделать его частью жизни, а не случайностью. Вам не хватает понимания, как это устроено — и опоры."},
+ {min:6,max:6,name:"Раскрытая сила",pct:[88,94],text:"Ваша сила работает, и вы ей доверяете. Теперь важно не растерять её и углубить: понять её корни и научиться беречь себя. Практики ниже помогут удерживать поток."}
+];
+
+/* ================= ЛОГИКА ================= */
+let step=0; const answers=[];
+const $=s=>document.querySelector(s);
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$('#'+id).classList.add('active');window.scrollTo({top:0,behavior:'instant'});}
+
+// звёзды
+(()=>{const s=$('#stars');for(let i=0;i<60;i++){const e=document.createElement('i');e.style.left=Math.random()*100+'%';e.style.top=Math.random()*100+'%';e.style.animationDelay=(Math.random()*5)+'s';e.style.animationDuration=(3+Math.random()*5)+'s';s.appendChild(e);}})();
+
+// превью архетипов
+$('#archPreview').innerHTML=ORDER.map(k=>`<div class="arch">${ICONS[k]}<b>${A[k].name}</b><span>${A[k].short}</span></div>`).join('');
+
+document.querySelectorAll('[data-start]').forEach(b=>b.onclick=()=>{track('quiz_start');step=0;answers.length=0;show('quiz');renderQ();});
+$('#qBack').onclick=()=>{ if(step>0){step--;renderQ();} };
+
+function renderQ(){
+  const item=Q[step];
+  $('#qCount').textContent=`${step+1} / ${Q.length}`;
+  $('#qProg').style.width=((step)/Q.length*100)+'%';
+  $('#qBack').disabled=step===0;
+  $('#qCard').innerHTML=`<div class="qanim"><div class="qnum">Вопрос ${step+1}</div><h2 class="qtext">${item.q}</h2>
+   <div class="opts">${item.o.map((o,i)=>`<button class="opt${answers[step]===i?' sel':''}" data-i="${i}"><span class="dot"></span><span>${o[0]}</span></button>`).join('')}</div>
+   <p class="note" style="margin-top:18px">Выберите то, что ближе. Первый отклик — самый точный.</p></div>`;
+  $('#qCard').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    answers[step]=+b.dataset.i; b.classList.add('sel');
+    setTimeout(()=>{ step++; if(step<Q.length) renderQ(); else finish(); },280);
+  });
+}
+
+function finish(){
+  $('#qProg').style.width='100%'; track('quiz_complete');
+  show('loading');
+  const t=["Раскладываем ваши ответы…","Ищем вашу ведущую силу…","Смотрим, что скрыто в тени…","Подбираем практики…"];
+  let i=0; $('#loadText').textContent=t[0];
+  const iv=setInterval(()=>{i++; if(i<t.length) $('#loadText').textContent=t[i];},800);
+  setTimeout(()=>{clearInterval(iv);renderResult();},3300);
+}
+
+function calc(){
+  const sc={seer:0,dreamer:0,healer:0,queen:0,keeper:0}; let lvl=0;
+  Q.forEach((item,qi)=>{const a=answers[qi]; if(a==null)return; const v=item.o[a][1];
+    if(item.lvl) lvl+=v; else for(const k in v) sc[k]+=v[k];});
+  const ranked=ORDER.slice().sort((a,b)=>sc[b]-sc[a]);
+  const max=Math.max(...Object.values(sc))||1;
+  const L=LEVELS.find(l=>lvl>=l.min&&lvl<=l.max);
+  const pct=Math.round(L.pct[0]+(sc[ranked[0]]%5)/4*(L.pct[1]-L.pct[0]));
+  return {sc,ranked,max,L,pct};
+}
+
+function renderResult(){
+  const {sc,ranked,max,L,pct}=calc();
+  const k=ranked[0], k2=ranked[1], a=A[k], a2=A[k2];
+  const total=Object.values(sc).reduce((x,y)=>x+y,0)||1;
+  const url=checkoutUrl(k);
+  $('#stickyBtn').href=url;
+  $('#resBody').innerHTML=`
+  <div class="res-head">
+    <span class="eyebrow">Ваш расклад готов</span>
+    <h1 style="font-size:clamp(38px,7vw,60px);margin-top:14px">Ваша сила — <em>${a.name}</em></h1>
+  </div>
+  <div class="tarot"><div class="tarot-in"><div class="roman">${a.roman}</div>${ICONS[k]}<div><div class="tname">${a.name}</div><div class="tsub" style="margin-top:8px">${a.sub}</div></div></div></div>
+
+  <div class="block"><h3>Суть вашего дара</h3><p>${a.essence}</p></div>
+
+  <div class="block"><h3>Ваша карта сил</h3>
+    <div class="bars">${ranked.map((x,i)=>`<div class="bar-row${i===0?' lead-row':''}"><span>${A[x].name}</span><div class="bar"><i data-w="${Math.round(sc[x]/max*100)}"></i></div><span>${Math.round(sc[x]/total*100)}%</span></div>`).join('')}</div>
+    <p class="muted" style="margin-top:18px">Вторая по силе — <b style="color:var(--paper)">${a2.name}</b> (${a2.short}). Она усиливает ваш главный дар и подсказывает, куда его направить.</p>
+  </div>
+
+  <div class="block"><h3>Как ваш дар проявляется</h3><ul>${a.shows.map(s=>`<li>${s}</li>`).join('')}</ul></div>
+
+  <div class="block"><h3>Уровень раскрытия</h3>
+    <div class="level"><div class="ring" style="--p:${pct}"><b>${pct}%</b></div>
+    <div class="lt"><strong>${L.name}</strong><p>${L.text}</p></div></div>
+  </div>
+
+  <div class="block shadow"><h3>Тень архетипа: когда сила закрыта</h3>
+    <p class="muted" style="margin-bottom:12px">Нераскрытый дар не исчезает. Он ищет выход — и часто разрушает. Отметьте, что из этого вам знакомо:</p>
+    <ul>${a.shadow.map(s=>`<li>${s}</li>`).join('')}</ul>
+  </div>
+
+  <div class="block"><h3>Практики на 7 дней для ${a.gen}</h3>
+    <div class="practice">${a.practices.map(p=>`<div><small>${p[0]}</small><b>${p[1]}</b>${p[2]}</div>`).join('')}</div>
+  </div>
+
+  <p class="quote">Но практики — только начало. Чтобы дар раскрылся, нужно понять, откуда он и что он от вас хочет.</p>
+
+  <div class="block" style="border-color:rgba(209,180,120,.5)"><h3>Почему ${a.name} узнает себя в книге «Я ведьма»</h3>
+    <p>${a.book}</p>
+    <p>Это роман о судьбе, любви, мистике и силе, основанный на реальных событиях. Его выбирают те, кто чувствует, что в них есть больше, чем они привыкли показывать. Многие читательницы пишут, что книга «открыла» им то, о чём они догадывались годами.</p>
+  </div>
+
+  <div class="offer" id="offer"><div class="offer-in">
+    <img class="cover" src="${COVER}" alt="Обложка книги «Я ведьма. Жизнь до и после»" onerror="this.outerHTML='<div class=\\'cover cover-fallback\\'><b>Я ведьма</b><span>Виктория Байн</span></div>'">
+    <div>
+      <span class="eyebrow">Только для прошедших тест</span>
+      <h2 style="margin-top:10px;font-size:clamp(30px,4.5vw,42px)">«Я ведьма. Жизнь до и после»</h2>
+      <div class="price"><b>${PRICE} ₽</b><s>${OLD_PRICE} ₽</s><span class="tag">−${Math.round((1-PRICE/OLD_PRICE)*100)}%</span></div>
+      <ul>
+        <li>Электронная книга: ePub + PDF</li>
+        <li>Придёт сразу после оплаты — читать через 2 минуты</li>
+        <li>История, основанная на реальных событиях</li>
+        <li>Ключ к вашему архетипу: ${a.name}</li>
+      </ul>
+      <a class="btn pulse" href="${url}" onclick="track('offer_click')">Забрать книгу за ${PRICE} ₽</a>
+      <div class="alt"><a href="${SITE}/read/" onclick="track('free_chapters')">Сначала прочитать 3 главы бесплатно →</a></div>
+    </div>
+  </div></div>
+  <p class="note" style="text-align:center">Бестселлер 2025 · Более 1400 покупок за последние 30 дней</p>
+
+  <div class="share">
+    <button class="btn ghost" id="shareBtn">Поделиться результатом</button>
+    <button class="btn ghost" id="againBtn">Пройти ещё раз</button>
+  </div>`;
+  show('result'); track('result_'+k);
+  requestAnimationFrame(()=>setTimeout(()=>document.querySelectorAll('.bar i').forEach(i=>i.style.width=i.dataset.w+'%'),200));
+  $('#againBtn').onclick=()=>{step=0;answers.length=0;show('quiz');renderQ();};
+  $('#shareBtn').onclick=async()=>{
+    const text=`Мой архетип силы — ${a.name} (${a.short}). А какая сила скрыта в тебе?`;
+    const link=location.href.split('#')[0];
+    try{ if(navigator.share){await navigator.share({title:'Тест: какая сила в тебе скрыта',text,url:link});}
+         else {await navigator.clipboard.writeText(text+' '+link);$('#shareBtn').textContent='Ссылка скопирована ✓';} }catch(e){}
+  };
+  // липкая кнопка на мобильном — после блока «Тень», прячется на самом оффере
+  const sticky=$('#sticky'), sh=document.querySelector('.block.shadow'), of=$('#offer');
+  const onScroll=()=>{const y=sh.getBoundingClientRect().top, o=of.getBoundingClientRect();
+    sticky.classList.toggle('show', y<innerHeight*.5 && !(o.top<innerHeight && o.bottom>0));};
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+}
+</script>
+</body>
+</html>
