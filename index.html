@@ -180,6 +180,17 @@ section{padding:72px 0}
 .offer .btn{width:100%}
 .offer .alt{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:14px}
 .offer .alt a{color:var(--gold)}
+.program{margin:40px 0 0}
+.stages{display:grid;gap:12px;margin-top:18px;counter-reset:st}
+.stage{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:rgba(33,19,27,.6)}
+.stage small{color:var(--gold);font-size:26px;line-height:1;text-align:center;padding-top:2px}
+.stage b{display:block;font-family:var(--serif);font-size:22px;color:var(--paper);font-weight:600;line-height:1.1;margin-bottom:4px}
+.cover-wrap{position:relative}
+.badge41{position:absolute;right:-8px;bottom:-12px;width:78px;height:78px;border-radius:50%;display:grid;place-items:center;text-align:center;
+  background:radial-gradient(circle at 35% 30%,var(--gold2),var(--gold) 60%,#a8864f);color:#2a1720;font:700 11px/1.05 var(--sans);letter-spacing:.04em;text-transform:uppercase;box-shadow:0 8px 24px rgba(0,0,0,.5);transform:rotate(8deg)}
+.badge41 b{display:block;font-family:var(--serif);font-size:26px;line-height:.9}
+.price small{font-size:18px;color:var(--muted)}
+@media (max-width:640px){.stage{gap:12px}.cover-wrap{width:62%;margin:0 auto}.cover-wrap .cover{width:100%}}
 .quote{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3vw,28px);color:var(--paper);text-align:center;max-width:620px;margin:40px auto}
 .share{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:30px 0}
 footer{padding:40px 0 60px;text-align:center;font-size:13px;color:var(--muted);border-top:1px solid var(--line);margin-top:40px}
@@ -243,8 +254,10 @@ footer a{color:var(--gold)}
 <script>
 /* ================= НАСТРОЙКИ ================= */
 const SITE = "https://victoria-bain-book.nazarova-k.chatgpt.site";
-const PRICE = 290, OLD_PRICE = 500;
-const checkoutUrl = (a,l) => `${SITE}/checkout/?book=witch&format=pdf&source=quiz290&archetype=${a}&lang=${l}`;
+const PRICE = 1500;
+// ⚠️ Вставьте сюда ссылку на продукт-подписку в Lava.top:
+const LAVA_URL = "https://app.lava.top/";
+const checkoutUrl = (a,l) => LAVA_URL;
 const COVER = `${SITE}/assets/edition-cover.webp`;
 const YM_ID = null; // номер счётчика Яндекс.Метрики, если нужен
 function track(goal){ try{ if(YM_ID && window.ym) ym(YM_ID,'reachGoal',goal); if(window.gtag) gtag('event',goal); }catch(e){} }
@@ -699,6 +712,43 @@ es:[
  ["¿Cómo tratas tus «rarezas»: sueños, presentimientos, sensaciones?",["Confío en ellas y las uso","Las noto, pero no sé qué hacer con ellas","Intento no hacerles caso: «son fantasías»","Me dan miedo y las escondo de los demás"]]]
 };
 
+/* ---------- Финальный оффер: подписка «Вход в практику» ---------- */
+const OFFER = {
+ru:{eyebrow:"Следующий шаг для вашего дара", title:"«Вход в практику»: закрытый чат для раскрытия силы",
+ lead:n=>`Закрытый Telegram-чат Виктории Байн. Каждый день бот присылает вам практику, а в ветках ждут видеоуроки и книга. Регулярность — то, что превращает дар (${n}) из случайности в силу, которой вы управляете.`,
+ list:n=>["Ежедневные практики от бота — каждый день новое задание",`Практики, которые раскрывают ваш архетип: ${n}`,"Видеоуроки: раскрытие потенциала, ясновидение, работа со снами","Книга «Я ведьма» внутри чата"],
+ per:"/ месяц", btn:p=>`Войти в практику за ${p} ₽`, cancel:"Оплата через Lava.top. Подписку можно отменить в любой момент.",
+ badge:["✦","каждый день"], programH:"Что внутри закрытого чата",
+ stages:[["☾","Ежедневная практика","Бот каждый день присылает задание. Практики повторяются и углубляются — так дар закрепляется в теле и в жизни."],["▶","Видеоуроки","Раскрытие потенциала, ясновидение, сновидения, работа с интуицией — смотрите в своём темпе."],["❦","Книга «Я ведьма»","Роман Виктории Байн, с которого начинается путь, — уже внутри."],["◎","Общий чат","Вопросы, отклики и поддержка тех, кто идёт тем же путём."]],
+ bookP2:"Это роман о судьбе, любви, мистике и силе, основанный на реальных событиях. Книга ждёт вас внутри закрытого чата — вместе с практиками.",
+ social:"Виктория Байн — автор бестселлера 2025 «Я ведьма»", sticky:p=>`Вход в практику — ${p} ₽/мес`, langNote:""},
+en:{eyebrow:"The next step for your gift", title:"“Entering the Practice”: a private chat for awakening your power",
+ lead:n=>`Victoria Bain’s private Telegram chat. Every day a bot sends you a practice, and video lessons and the book are waiting in the topics. Regularity is what turns your gift (${n}) from a coincidence into a power you can direct.`,
+ list:n=>["Daily practices from the bot — a new task every day",`Practices that open your archetype: ${n}`,"Video lessons: unlocking your potential, clairvoyance, working with dreams","The book “I Am a Witch” inside the chat"],
+ per:"/ month", btn:p=>`Enter the practice for ${p} ₽`, cancel:"Payment via Lava.top. You can cancel your subscription at any time.",
+ badge:["✦","every day"], programH:"What’s inside the private chat",
+ stages:[["☾","Daily practice","The bot sends a task every day. Practices repeat and deepen — that’s how your gift settles into your body and your life."],["▶","Video lessons","Unlocking your potential, clairvoyance, dreams, working with intuition — watch at your own pace."],["❦","The book “I Am a Witch”","Victoria Bain’s novel, where the path begins, is already inside."],["◎","Community chat","Questions, insights and support from those walking the same path."]],
+ bookP2:"It’s a novel about destiny, love, mysticism and power, based on real events. The book is waiting for you inside the private chat — together with the practices.",
+ social:"Victoria Bain — author of the 2025 bestseller “I Am a Witch”", sticky:p=>`Enter the practice — ${p} ₽/mo`, langNote:"The chat, bot and lessons are in Russian."},
+pt:{eyebrow:"O próximo passo para o seu dom", title:"“Entrada na prática”: um chat fechado para despertar o seu poder",
+ lead:n=>`O chat fechado de Victoria Bain no Telegram. Todos os dias um bot envia uma prática, e nos tópicos esperam por você videoaulas e o livro. É a regularidade que transforma o seu dom (${n}) de acaso em um poder que você conduz.`,
+ list:n=>["Práticas diárias do bot — uma tarefa nova a cada dia",`Práticas que abrem o seu arquétipo: ${n}`,"Videoaulas: despertar do potencial, clarividência, trabalho com sonhos","O livro “Eu sou uma bruxa” dentro do chat"],
+ per:"/ mês", btn:p=>`Entrar na prática por ${p} ₽`, cancel:"Pagamento via Lava.top. Você pode cancelar a assinatura a qualquer momento.",
+ badge:["✦","todo dia"], programH:"O que há dentro do chat fechado",
+ stages:[["☾","Prática diária","O bot envia uma tarefa todos os dias. As práticas se repetem e se aprofundam — é assim que o dom se firma no corpo e na vida."],["▶","Videoaulas","Despertar do potencial, clarividência, sonhos, trabalho com a intuição — assista no seu ritmo."],["❦","O livro “Eu sou uma bruxa”","O romance de Victoria Bain, onde o caminho começa, já está lá dentro."],["◎","Chat da comunidade","Perguntas, relatos e apoio de quem segue o mesmo caminho."]],
+ bookP2:"É um romance sobre destino, amor, mistério e poder, baseado em fatos reais. O livro espera por você dentro do chat fechado — junto com as práticas.",
+ social:"Victoria Bain — autora do best-seller de 2025 “Eu sou uma bruxa”", sticky:p=>`Entrada na prática — ${p} ₽/mês`, langNote:"O chat, o bot e as aulas estão em russo."},
+es:{eyebrow:"El siguiente paso para tu don", title:"«Entrada a la práctica»: un chat privado para despertar tu poder",
+ lead:n=>`El chat privado de Victoria Bain en Telegram. Cada día un bot te envía una práctica, y en los temas te esperan videolecciones y el libro. La constancia es lo que convierte tu don (${n}) de casualidad en un poder que diriges.`,
+ list:n=>["Prácticas diarias del bot: una tarea nueva cada día",`Prácticas que abren tu arquetipo: ${n}`,"Videolecciones: despertar del potencial, clarividencia, trabajo con los sueños","El libro «Soy una bruja» dentro del chat"],
+ per:"/ mes", btn:p=>`Entrar a la práctica por ${p} ₽`, cancel:"Pago a través de Lava.top. Puedes cancelar la suscripción en cualquier momento.",
+ badge:["✦","cada día"], programH:"Qué hay dentro del chat privado",
+ stages:[["☾","Práctica diaria","El bot te envía una tarea cada día. Las prácticas se repiten y se profundizan: así el don se asienta en el cuerpo y en la vida."],["▶","Videolecciones","Despertar del potencial, clarividencia, sueños, trabajo con la intuición: a tu propio ritmo."],["❦","El libro «Soy una bruja»","La novela de Victoria Bain, donde empieza el camino, ya está dentro."],["◎","Chat de la comunidad","Preguntas, vivencias y apoyo de quienes recorren el mismo camino."]],
+ bookP2:"Es una novela sobre el destino, el amor, el misterio y el poder, basada en hechos reales. El libro te espera dentro del chat privado, junto con las prácticas.",
+ social:"Victoria Bain, autora del superventas de 2025 «Soy una bruja»", sticky:p=>`Entrada a la práctica — ${p} ₽/mes`, langNote:"El chat, el bot y las lecciones están en ruso."}
+};
+
+
 const LEVELS_TXT = {
 en:[["Sleeping power","Your gift is closed right now — and judging by your answers, it’s already making itself felt through tiredness, anxiety or the feeling that life is going “the wrong way”. This isn’t a verdict, it’s a signal: your power wants out. Start with the practices below — even just one."],
  ["Awakening","Your power is waking up: you notice it but don’t fully trust it yet. This is the most important and most fragile stage. If you brush it off now, the gift will fall asleep again. If you support it, it will open very quickly."],
@@ -852,8 +902,8 @@ function renderResult(silent){
   const u=t(), AA=D().A, {sc,ranked,max,li,pct}=lastResult, L=D().L[li];
   const k=ranked[0], k2=ranked[1], a=AA[k], a2=AA[k2];
   const total=Object.values(sc).reduce((x,y)=>x+y,0)||1;
-  const url=checkoutUrl(k,lang);
-  $('#stickyBtn').href=url; $('#stickyBtn').textContent=u.sticky(PRICE);
+  const url=checkoutUrl(k,lang), O=OFFER[lang];
+  $('#stickyBtn').href=url; $('#stickyBtn').textContent=O.sticky(PRICE);
   $('#resBody').innerHTML=`
   <div class="res-head">
     <span class="eyebrow">${u.resEyebrow}</span>
@@ -879,21 +929,25 @@ function renderResult(silent){
   </div>
   <p class="quote">${u.bridge}</p>
   <div class="block" style="border-color:rgba(209,180,120,.5)"><h3>${u.bookH(a.name)}</h3>
-    <p>${a.book}</p><p>${u.bookP2}</p>
+    <p>${a.book}</p><p>${O.bookP2}</p>
+  </div>
+  <div class="program"><h3>${O.programH}</h3>
+    <div class="stages">${O.stages.map(x=>`<div class="stage"><small>${x[0]}</small><div><b>${x[1]}</b>${x[2]}</div></div>`).join('')}</div>
   </div>
   <div class="offer" id="offer"><div class="offer-in">
-    <img class="cover" src="${COVER}" alt="${u.coverAlt}" onerror="this.outerHTML='<div class=\\'cover cover-fallback\\'><b>${u.coverFallback[0]}</b><span>${u.coverFallback[1]}</span></div>'">
+    <div class="cover-wrap"><img class="cover" src="${COVER}" alt="${u.coverAlt}" onerror="this.outerHTML='<div class=\\'cover cover-fallback\\'><b>${u.coverFallback[0]}</b><span>${u.coverFallback[1]}</span></div>'"><div class="badge41"><div><b>${O.badge[0]}</b>${O.badge[1]}</div></div></div>
     <div>
-      <span class="eyebrow">${u.offerEyebrow}</span>
-      <h2 style="margin-top:10px;font-size:clamp(30px,4.5vw,42px)">${u.bookTitle}</h2>
-      <div class="price"><b>${PRICE} ₽</b><s>${OLD_PRICE} ₽</s><span class="tag">−${Math.round((1-PRICE/OLD_PRICE)*100)}%</span></div>
-      <ul>${u.offerList(a.name).map(x=>`<li>${x}</li>`).join('')}</ul>
-      ${u.langNote?`<p class="note" style="margin:-10px 0 18px">${u.langNote}</p>`:''}
-      <a class="btn pulse" href="${url}" onclick="track('offer_click')">${u.offerBtn(PRICE)}</a>
-      <div class="alt"><a href="${SITE}/read/" onclick="track('free_chapters')">${u.freeLink}</a></div>
+      <span class="eyebrow">${O.eyebrow}</span>
+      <h2 style="margin-top:10px;font-size:clamp(28px,4.2vw,40px)">${O.title}</h2>
+      <p style="margin-top:12px">${O.lead(a.name)}</p>
+      <div class="price"><b>${PRICE} ₽</b><small>${O.per}</small></div>
+      <ul>${O.list(a.name).map(x=>`<li>${x}</li>`).join('')}</ul>
+      ${O.langNote?`<p class="note" style="margin:-10px 0 18px">${O.langNote}</p>`:''}
+      <a class="btn pulse" href="${url}" target="_blank" rel="noopener" onclick="track('offer_click');track('offer_click_'+lang)">${O.btn(PRICE)}</a>
+      <p class="note" style="margin-top:14px">${O.cancel}</p>
     </div>
   </div></div>
-  <p class="note" style="text-align:center">${u.social}</p>
+  <p class="note" style="text-align:center">${O.social}</p>
   <div class="share">
     <button class="btn ghost" id="shareBtn">${u.shareBtn}</button>
     <button class="btn ghost" id="againBtn">${u.againBtn}</button>
