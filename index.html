@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="lavender">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -218,6 +218,49 @@ footer a{color:var(--gold)}
 @media (max-width:640px){.langbar{top:10px;right:10px}.langbar button{padding:7px 8px;font-size:11px}.top{padding-right:0;padding-top:58px}}
 #quiz .qbar{padding-top:64px}
 .res-head{padding-top:64px}
+
+/* ================= ЦВЕТОВЫЕ ТЕМЫ (переключаются атрибутом data-theme у <html>) ================= */
+html[data-theme="lavender"]{--night:#f4f2ff;--dark:#ffffff;--wine:#6a55e0;--wine2:#8e7dff;--gold:#6a4fe0;--gold2:#a99bff;--paper:#241c5c;--cream:#3b3668;--muted:#716c96;--line:rgba(106,79,224,.2);
+  --blob1:rgba(160,140,255,.45);--blob2:rgba(120,195,255,.4);--blob3:rgba(220,170,255,.3);--panel:rgba(255,255,255,.72);--panel2:rgba(238,234,255,.85);
+  --g1:#9c8cff;--g2:#6a4fe0;--g3:#5638c9;--btnText:#fff;--deep1:#7b63ff;--deep2:#2e2479;--track:rgba(106,79,224,.12)}
+html[data-theme="rose"]{--night:#fff3f4;--dark:#ffffff;--wine:#e0435f;--wine2:#ff7f93;--gold:#d93356;--gold2:#ff9aa9;--paper:#4a1526;--cream:#5a2a37;--muted:#946677;--line:rgba(217,51,86,.2);
+  --blob1:rgba(255,140,165,.45);--blob2:rgba(255,190,150,.4);--blob3:rgba(255,200,220,.4);--panel:rgba(255,255,255,.75);--panel2:rgba(255,232,236,.85);
+  --g1:#ff8296;--g2:#e0435f;--g3:#c22c4b;--btnText:#fff;--deep1:#ef5a74;--deep2:#5e1328;--track:rgba(217,51,86,.12)}
+html[data-theme="sun"]{--night:#fffaea;--dark:#ffffff;--wine:#f0a800;--wine2:#ffcc4d;--gold:#a86c00;--gold2:#ffd766;--paper:#3a2904;--cream:#4a3a16;--muted:#866f43;--line:rgba(168,108,0,.22);
+  --blob1:rgba(255,214,90,.5);--blob2:rgba(255,170,110,.32);--blob3:rgba(255,236,160,.6);--panel:rgba(255,255,255,.75);--panel2:rgba(255,244,205,.9);
+  --g1:#ffe07a;--g2:#f7b500;--g3:#e09400;--btnText:#3a2904;--deep1:#f2a900;--deep2:#6e4300;--track:rgba(168,108,0,.14)}
+html[data-theme] body::before{background:radial-gradient(1100px 700px at 85% -10%,var(--blob1),transparent 60%),radial-gradient(900px 600px at -10% 35%,var(--blob2),transparent 60%),radial-gradient(900px 600px at 50% 110%,var(--blob3),transparent 60%),var(--night)}
+html[data-theme] .stars i{background:var(--gold)}
+html[data-theme] .btn{color:var(--btnText);background:linear-gradient(135deg,var(--g1),var(--g2) 55%,var(--g3));box-shadow:0 10px 32px var(--line),inset 0 1px 0 rgba(255,255,255,.45)}
+html[data-theme] .btn:hover{box-shadow:0 14px 40px var(--line)}
+html[data-theme] .btn.pulse{animation:none}
+html[data-theme] .btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold);box-shadow:none}
+html[data-theme] .sign,html[data-theme] .arch,html[data-theme] .block,html[data-theme] .opt,html[data-theme] .stage{background:var(--panel);box-shadow:0 6px 24px var(--track)}
+html[data-theme] .opt:hover{background:var(--panel2)}
+html[data-theme] .opt.sel{background:var(--panel2)}
+html[data-theme] .warn{background:linear-gradient(160deg,var(--panel2),var(--panel));border-color:var(--line)}
+html[data-theme] .block.shadow{background:linear-gradient(160deg,var(--panel2),var(--panel))}
+html[data-theme] .practice div{background:var(--panel2);border-color:var(--line)}
+html[data-theme] .progress,html[data-theme] .bar{background:var(--track)}
+html[data-theme] .ring{background:conic-gradient(var(--gold) calc(var(--p)*1%),var(--track) 0)}
+html[data-theme] .tarot{background:linear-gradient(160deg,var(--g1),var(--g2) 45%,var(--g3));box-shadow:0 24px 60px var(--line)}
+html[data-theme] .tarot-in{background:radial-gradient(circle at 50% 35%,var(--deep1),var(--deep2) 75%)}
+html[data-theme] .tarot-in .tname{color:#fff}
+html[data-theme] .tarot-in .roman,html[data-theme] .tarot-in .tsub{color:rgba(255,255,255,.85)}
+html[data-theme] .tarot-in svg *{stroke:#fff}
+html[data-theme] .tarot-in svg [fill="#d1b478"]{fill:#fff}
+html[data-theme] .cards-fan span{background:linear-gradient(160deg,var(--deep1),var(--deep2))}
+html[data-theme] .cards-fan span::after{color:#fff}
+html[data-theme] .offer{background:linear-gradient(135deg,var(--g1),var(--g2) 50%,var(--g3))}
+html[data-theme] .offer-in{background:linear-gradient(170deg,#fff,var(--night))}
+html[data-theme] .cover{box-shadow:-8px 18px 40px rgba(0,0,0,.28)}
+html[data-theme] .price b{color:var(--gold)}
+html[data-theme] .badge41{background:radial-gradient(circle at 35% 30%,var(--g1),var(--g2) 60%,var(--g3));color:var(--btnText);box-shadow:0 8px 20px var(--line)}
+html[data-theme] .sticky{background:linear-gradient(0deg,rgba(255,255,255,.97),rgba(255,255,255,.88))}
+html[data-theme] .langbar{background:rgba(255,255,255,.8)}
+html[data-theme] .orb svg{stroke:var(--gold);opacity:.7}
+html[data-theme] .orb svg [fill="#d1b478"]{fill:var(--gold)}
+html[data-theme] .langbar button.on{background:var(--g2);color:var(--btnText)}
 </style>
 </head>
 <body>
@@ -394,11 +437,11 @@ ru:{
  navTest:"Тест ✦", logoSub:"истории за гранью привычного",
  heroEyebrow:"Бесплатный тест · 10 вопросов · 2 минуты",
  heroH1:"Какая <em>скрытая сила</em> живёт в вас?",
- heroLead:"Сны, которые сбываются. Предчувствия. Ощущение, что вы чувствуете людей насквозь. Это не случайность — это ваш дар. Узнайте, какой он, и получите личный расклад: ваш архетип, его тень и практики, чтобы раскрыть силу.",
+ heroLead:"Сны, которые сбываются. Сильная интуиция. Чувство, что высшие силы всегда рядом и защищают вас. Это не случайность — это ваш дар. Узнайте, какой он, и получите личный расклад: ваш архетип, его тень и практики, чтобы раскрыть силу.",
  heroBtn:"Пройти тест ✦", heroMeta:["без регистрации","результат сразу","по мотивам книги «Я ведьма»"],
  signsEyebrow:"Узнаёте себя?", signsH2:"Если с вами случалось хотя бы одно из этого — <em>тест для вас</em>",
- signs:[["☾","Сны сбываются","Снится то, что потом происходит наяву. Или сны настолько яркие, что утром трудно понять, где была реальность."],
-  ["◉","Вы «просто знаете»","Кто сейчас позвонит, что человек врёт, чем закончится дело. Объяснить не можете — но оказываетесь правы."],
+ signs:[["✧","Высшие силы вас защищают","Вы чувствуете, что вас всегда ведут и берегут: беда обходит стороной, а помощь приходит в последний момент."],["☾","Сны сбываются","Снится то, что потом происходит наяву. Или сны настолько яркие, что утром трудно понять, где была реальность."],
+  ["◉","Сильная интуиция: вы «просто знаете»","Кто сейчас позвонит, что человек врёт, чем закончится дело. Объяснить не можете — но оказываетесь правы."],
   ["♡","Чужая боль — как своя","Рядом с одними людьми вы оживаете, после других — опустошены, будто из вас забрали силы."],
   ["✧","Слова сбываются","Скажете в сердцах — и случается. Вы давно заметили, что с желаниями надо быть осторожнее."],
   ["∞","«Я здесь уже была»","Дежавю, тяга к другим эпохам и местам, воспоминания, которых не может быть."]],
@@ -441,10 +484,10 @@ en:{
  navTest:"Quiz ✦", logoSub:"stories beyond the ordinary",
  heroEyebrow:"Free quiz · 10 questions · 2 minutes",
  heroH1:"What <em>hidden power</em> lives in you?",
- heroLead:"Dreams that come true. Premonitions. The feeling that you can see right through people. It isn’t a coincidence — it’s your gift. Find out what it is and get a personal reading: your archetype, its shadow, and practices to awaken your power.",
+ heroLead:"Dreams that come true. Strong intuition. The feeling that higher powers are always near, protecting you. It isn’t a coincidence — it’s your gift. Find out what it is and get a personal reading: your archetype, its shadow, and practices to awaken your power.",
  heroBtn:"Take the quiz ✦", heroMeta:["no sign-up","instant result","inspired by the novel “I Am a Witch”"],
  signsEyebrow:"Sound familiar?", signsH2:"If even one of these has happened to you — <em>this quiz is for you</em>",
- signs:[["☾","Your dreams come true","You dream of things that later happen. Or your dreams are so vivid that in the morning it’s hard to tell what was real."],
+ signs:[["✧","Higher powers protect you","You feel that you are always guided and kept safe: trouble passes you by, and help arrives at the last moment."],["☾","Your dreams come true","You dream of things that later happen. Or your dreams are so vivid that in the morning it’s hard to tell what was real."],
   ["◉","You “just know”","Who’s about to call, when someone is lying, how things will turn out. You can’t explain it — but you’re right."],
   ["♡","Others’ pain feels like yours","Some people make you come alive; others leave you drained, as if your strength had been taken."],
   ["✧","Your words come true","Say something in the heat of the moment — and it happens. You learned long ago to be careful what you wish for."],
@@ -488,10 +531,10 @@ pt:{
  navTest:"Teste ✦", logoSub:"histórias além do comum",
  heroEyebrow:"Teste gratuito · 10 perguntas · 2 minutos",
  heroH1:"Que <em>poder oculto</em> vive em você?",
- heroLead:"Sonhos que se realizam. Pressentimentos. A sensação de enxergar as pessoas por dentro. Não é coincidência — é o seu dom. Descubra qual é e receba uma leitura pessoal: o seu arquétipo, a sua sombra e práticas para despertar o seu poder.",
+ heroLead:"Sonhos que se realizam. Uma intuição forte. A sensação de que forças superiores estão sempre por perto, protegendo você. Não é coincidência — é o seu dom. Descubra qual é e receba uma leitura pessoal: o seu arquétipo, a sua sombra e práticas para despertar o seu poder.",
  heroBtn:"Fazer o teste ✦", heroMeta:["sem cadastro","resultado imediato","inspirado no romance “Eu sou uma bruxa”"],
  signsEyebrow:"Você se reconhece?", signsH2:"Se pelo menos uma destas coisas já aconteceu com você — <em>este teste é para você</em>",
- signs:[["☾","Seus sonhos se realizam","Você sonha com coisas que depois acontecem. Ou os sonhos são tão vívidos que, de manhã, é difícil saber o que foi real."],
+ signs:[["✧","Forças superiores protegem você","Você sente que está sempre sendo guiada e protegida: o perigo passa longe, e a ajuda chega no último instante."],["☾","Seus sonhos se realizam","Você sonha com coisas que depois acontecem. Ou os sonhos são tão vívidos que, de manhã, é difícil saber o que foi real."],
   ["◉","Você “simplesmente sabe”","Quem vai ligar, quando alguém está mentindo, como tudo vai terminar. Não consegue explicar — mas acerta."],
   ["♡","A dor dos outros parece sua","Perto de algumas pessoas você ganha vida; depois de outras, fica esgotada, como se tivessem levado a sua força."],
   ["✧","Suas palavras se cumprem","Você fala algo num momento de raiva — e acontece. Há muito aprendeu a ter cuidado com o que deseja."],
@@ -535,10 +578,10 @@ es:{
  navTest:"Test ✦", logoSub:"historias más allá de lo común",
  heroEyebrow:"Test gratuito · 10 preguntas · 2 minutos",
  heroH1:"¿Qué <em>poder oculto</em> vive en ti?",
- heroLead:"Sueños que se cumplen. Presentimientos. La sensación de ver a las personas por dentro. No es casualidad: es tu don. Descubre cuál es y recibe una lectura personal: tu arquetipo, su sombra y prácticas para despertar tu poder.",
+ heroLead:"Sueños que se cumplen. Una intuición fuerte. La sensación de que fuerzas superiores están siempre cerca, protegiéndote. No es casualidad: es tu don. Descubre cuál es y recibe una lectura personal: tu arquetipo, su sombra y prácticas para despertar tu poder.",
  heroBtn:"Hacer el test ✦", heroMeta:["sin registro","resultado inmediato","inspirado en la novela «Soy una bruja»"],
  signsEyebrow:"¿Te reconoces?", signsH2:"Si te ha pasado al menos una de estas cosas, <em>este test es para ti</em>",
- signs:[["☾","Tus sueños se cumplen","Sueñas con cosas que luego suceden. O tus sueños son tan vívidos que por la mañana cuesta saber qué fue real."],
+ signs:[["✧","Las fuerzas superiores te protegen","Sientes que siempre te guían y te cuidan: los problemas pasan de largo y la ayuda llega en el último momento."],["☾","Tus sueños se cumplen","Sueñas con cosas que luego suceden. O tus sueños son tan vívidos que por la mañana cuesta saber qué fue real."],
   ["◉","Tú «simplemente sabes»","Quién va a llamar, cuándo alguien miente, cómo terminará algo. No puedes explicarlo, pero aciertas."],
   ["♡","El dolor ajeno se siente propio","Junto a algunas personas cobras vida; después de otras quedas vacía, como si te hubieran quitado la fuerza."],
   ["✧","Tus palabras se cumplen","Dices algo en un arrebato y sucede. Hace tiempo aprendiste a tener cuidado con lo que deseas."],
@@ -794,6 +837,10 @@ function show(id){current=id;document.querySelectorAll('.screen').forEach(s=>s.c
 
 (()=>{const s=$('#stars');for(let i=0;i<60;i++){const e=document.createElement('i');e.style.left=Math.random()*100+'%';e.style.top=Math.random()*100+'%';e.style.animationDelay=(Math.random()*5)+'s';e.style.animationDuration=(3+Math.random()*5)+'s';s.appendChild(e);}})();
 
+/* Тема: по умолчанию из <html data-theme>, для сравнения можно открыть ?theme=lavender | rose | sun | wine */
+(()=>{const th=new URLSearchParams(location.search).get('theme'); const ok=["lavender","rose","sun"];
+  if(ok.includes(th)) document.documentElement.dataset.theme=th; else if(th==="wine") delete document.documentElement.dataset.theme;
+  const tc={lavender:"#f4f2ff",rose:"#fff3f4",sun:"#fffaea"}[document.documentElement.dataset.theme]; const m=document.querySelector('meta[name=theme-color]'); if(m&&tc) m.content=tc;})();
 function setLang(l, rerender=true){
   lang=l; try{localStorage.setItem('vb_lang',l);}catch(e){}
   document.documentElement.lang=l;
@@ -816,7 +863,7 @@ function renderLanding(){
   </div>
   <header class="hero wrap" id="start">
     <div class="orb" aria-hidden="true">
-      <svg viewBox="0 0 200 200" fill="none" stroke="#d1b478" stroke-width=".7">
+      <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width=".7" style="color:#d1b478">
         <circle cx="100" cy="100" r="96" opacity=".5"/><circle cx="100" cy="100" r="80" stroke-dasharray="2 5"/>
         <circle cx="100" cy="100" r="60" opacity=".6"/>
         <path d="M100 4 L100 196 M4 100 L196 100 M32 32 L168 168 M168 32 L32 168" opacity=".25"/>
